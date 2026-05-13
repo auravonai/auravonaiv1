@@ -18,6 +18,7 @@ interface RazorpayOptions {
   key: string;
   amount: number;
   currency: string;
+  order_id: string;
   name: string;
   description: string;
   handler: (response: RazorpayResponse) => void;
@@ -32,6 +33,8 @@ interface RazorpayInstance {
 
 interface RazorpayResponse {
   razorpay_payment_id: string;
+  razorpay_order_id: string;
+  razorpay_signature: string;
 }
 
 const plans = [
@@ -150,20 +153,44 @@ export default function PaymentPageContent() {
     const payAmount = amount || plan?.price || 0;
     const planName = plan?.name || "Custom Payment";
     setIsLoading(true);
+
+    const orderRes = await fetch("/api/create-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ amount: payAmount, planName }),
+    });
+    if (!orderRes.ok) {
+      alert("Could not initiate payment. Please try again.");
+      setIsLoading(false);
+      return;
+    }
+    const { orderId } = await orderRes.json();
+
     const loaded = await loadRazorpay();
     if (!loaded) {
       alert("Payment gateway could not be loaded. Please try again.");
       setIsLoading(false);
       return;
     }
+
     const options: RazorpayOptions = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_XXXXXXXXXX",
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
       amount: payAmount * 100,
       currency: "INR",
+      order_id: orderId,
       name: "Auravon AI",
       description: planName,
-      handler: (response: RazorpayResponse) => {
-        setSuccessState({ paymentId: response.razorpay_payment_id, planName, amount: `₹${payAmount.toLocaleString("en-IN")}` });
+      handler: async (response: RazorpayResponse) => {
+        const verifyRes = await fetch("/api/verify-payment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(response),
+        });
+        if (verifyRes.ok) {
+          setSuccessState({ paymentId: response.razorpay_payment_id, planName, amount: `₹${payAmount.toLocaleString("en-IN")}` });
+        } else {
+          alert("Payment verification failed. Please contact support with Payment ID: " + response.razorpay_payment_id);
+        }
         setIsLoading(false);
       },
       prefill: { name: payerInfo.name, email: payerInfo.email, contact: payerInfo.phone },

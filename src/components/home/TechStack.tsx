@@ -43,13 +43,14 @@ export default function TechStack() {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
 
         <AnimatedSection className="text-center mb-16 md:mb-20">
-          <span className="section-label">Technology Stack</span>
+          <span className="section-label">Technology</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
-            Built on{" "}
-            <span className="gradient-text">Battle-Tested Tech</span>
+            Architecture That{" "}
+            <span className="gradient-text">Grows With You</span>
           </h2>
           <p className="text-[#8888a8] text-lg max-w-xl mx-auto leading-relaxed">
-            We use modern, proven technologies to build products that are fast, scalable, and maintainable for years.
+            We choose tools based on longevity, community support, and how well they&apos;ll
+            serve you three years from now — not what&apos;s trending this quarter.
           </p>
         </AnimatedSection>
 

@@ -9,8 +9,8 @@ const projects = [
   {
     title: "AI CRM Dashboard",
     category: "AI Solutions",
-    description: "AI-powered CRM with GPT-4 call summaries, predictive lead scoring, and automated pipeline forecasting.",
-    outcome: "+340% conversion rate",
+    description: "CRM with GPT-4 call summaries, lead scoring, and pipeline forecasting — built for a B2B sales team that outgrew spreadsheets.",
+    outcome: "Shipped in 6 weeks",
     tags: ["Next.js", "OpenAI", "PostgreSQL"],
     accentText: "text-violet-400",
     accentBg: "bg-violet-500/10",
@@ -19,29 +19,29 @@ const projects = [
   {
     title: "SaaS Analytics Platform",
     category: "SaaS Product",
-    description: "Real-time multi-tenant analytics aggregating 15+ data sources with AI-generated executive summaries.",
-    outcome: "2M+ data points/day",
+    description: "Multi-tenant analytics dashboard aggregating data from multiple sources, with AI-generated summaries for non-technical users.",
+    outcome: "Multi-tenant, production-ready",
     tags: ["React", "ClickHouse", "Kafka"],
     accentText: "text-blue-400",
     accentBg: "bg-blue-500/10",
     accentBorder: "border-blue-500/20",
   },
   {
-    title: "AI Customer Support Bot",
+    title: "AI Support Assistant",
     category: "AI Automation",
-    description: "RAG-based chatbot trained on company knowledge, deployed across web, WhatsApp, and email channels.",
-    outcome: "80% queries automated",
+    description: "RAG-based chatbot trained on a product knowledge base, deployed across web chat and WhatsApp for a growing SaaS company.",
+    outcome: "Web + WhatsApp channels",
     tags: ["LangChain", "Pinecone", "FastAPI"],
     accentText: "text-cyan-400",
     accentBg: "bg-cyan-500/10",
     accentBorder: "border-cyan-500/20",
   },
   {
-    title: "E-Commerce Platform",
+    title: "E-Commerce Rebuild",
     category: "Web Development",
-    description: "Custom Next.js e-commerce with server components, edge caching, and Stripe — rebuilt from Shopify.",
-    outcome: "Lighthouse score 99/100",
-    tags: ["Next.js 15", "Stripe", "Cloudflare"],
+    description: "Custom Next.js storefront with server components, edge caching, and Stripe — replacing a sluggish Shopify setup that couldn't be customized.",
+    outcome: "Faster, fully custom",
+    tags: ["Next.js", "Stripe", "Cloudflare"],
     accentText: "text-emerald-400",
     accentBg: "bg-emerald-500/10",
     accentBorder: "border-emerald-500/20",
@@ -49,18 +49,18 @@ const projects = [
   {
     title: "HR Management System",
     category: "Custom Software",
-    description: "Full HR suite covering recruitment, payroll, attendance tracking, and compliance reporting.",
-    outcome: "40 hours saved per week",
+    description: "Internal tool covering recruitment pipeline, payroll processing, attendance tracking, and compliance reports for a mid-size services company.",
+    outcome: "Replaced 4 separate tools",
     tags: ["Next.js", "MongoDB", "Razorpay"],
     accentText: "text-orange-400",
     accentBg: "bg-orange-500/10",
     accentBorder: "border-orange-500/20",
   },
   {
-    title: "Food Delivery Mobile App",
+    title: "Food Delivery App",
     category: "Mobile App",
-    description: "3-app system: customer app, driver app, restaurant dashboard with real-time GPS tracking.",
-    outcome: "₹8L/month saved",
+    description: "Three-app system — customer ordering, driver tracking, and restaurant dashboard — with real-time GPS and order management built in React Native.",
+    outcome: "3-app system, live GPS",
     tags: ["React Native", "Socket.io", "Maps API"],
     accentText: "text-pink-400",
     accentBg: "bg-pink-500/10",
@@ -76,11 +76,11 @@ export default function ProjectShowcase() {
         <AnimatedSection className="text-center mb-16 md:mb-20">
           <span className="section-label">Work</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
-            Products We&apos;ve{" "}
-            <span className="gradient-text">Shipped</span>
+            Selected{" "}
+            <span className="gradient-text">Product Work</span>
           </h2>
           <p className="text-[#8888a8] text-lg max-w-xl mx-auto leading-relaxed">
-            Real projects, measurable outcomes. A selection of digital products we&apos;ve engineered for our clients.
+            A sample of the products and systems we&apos;ve designed, built, and shipped.
           </p>
         </AnimatedSection>
 
@@ -121,16 +121,16 @@ export default function ProjectShowcase() {
               </div>
 
               {/* Outcome */}
-              <div className={`pt-4 border-t border-white/[0.06] flex items-center justify-between`}>
+              <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
                 <div>
-                  <div className={`text-base font-bold ${accentText}`}>{outcome}</div>
-                  <div className="text-[11px] text-[#48486a] mt-0.5">Key result</div>
+                  <div className={`text-sm font-semibold ${accentText}`}>{outcome}</div>
+                  <div className="text-[11px] text-[#48486a] mt-0.5">Project highlight</div>
                 </div>
                 <Link
                   href="/projects"
                   className={`inline-flex items-center gap-1 text-[12px] font-medium ${accentText} hover:opacity-75 transition-opacity`}
                 >
-                  View case
+                  Details
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>

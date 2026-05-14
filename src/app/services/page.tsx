@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import ServicesPageContent from "@/components/pages/ServicesPageContent";
 
 export const metadata: Metadata = {
-  title: "Services — Web, Mobile, AI, SaaS & Automation Development",
+  title: "Services — Web Apps, AI Integration & Mobile Development",
   description:
-    "Auravon AI offers full-stack web development, mobile app development, AI solutions, SaaS products, UI/UX design, and business automation. Enterprise-grade quality for startups.",
+    "Auravon AI builds web applications, mobile apps, AI integrations, custom internal tools, UI/UX design, and automation systems. Startup-focused, production-grade engineering.",
   openGraph: {
     title: "Services | Auravon AI",
-    description: "End-to-end digital services: Web, Mobile, AI, SaaS, Design & Automation.",
+    description:
+      "Web apps, mobile products, AI integrations, and internal tools — built by a small engineering team that ships.",
   },
 };
 

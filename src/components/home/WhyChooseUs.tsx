@@ -7,33 +7,33 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 const features = [
   {
     icon: Target,
-    title: "Startup-Focused Approach",
-    description: "We understand startup velocity. We build fast, iterate quickly, and help you get to market before your competition.",
+    title: "Built for Founders",
+    description: "You talk directly to the engineers building your product. No account managers, no handoffs. We move at the pace your business needs.",
   },
   {
     icon: Layers,
     title: "Scalable Architecture",
-    description: "Every product we architect scales from day one — built to handle millions of users without a complete rewrite.",
+    description: "We think about growth paths early — choosing databases, APIs, and infra that won't become your bottleneck six months after launch.",
   },
   {
     icon: Brain,
-    title: "AI-Integrated Solutions",
-    description: "We embed AI directly into your product architecture — making your software smarter and more competitive by default.",
+    title: "AI Where It Makes Sense",
+    description: "We integrate AI when it genuinely improves your product, not just to add a buzzword. We'll tell you when it's the wrong tool for the job.",
   },
   {
     icon: Rocket,
-    title: "Fast Development Cycles",
-    description: "Agile sprints, CI/CD pipelines, and modern tooling mean your product ships faster and evolves continuously.",
+    title: "Consistent Delivery",
+    description: "Structured sprints, clear milestones, regular demos. You always know where the project stands — no guessing, no radio silence.",
   },
   {
     icon: Search,
-    title: "SEO-First Development",
-    description: "Every product ships SEO-optimized — clean semantics, fast performance, and proper metadata as a baseline.",
+    title: "SEO-First by Default",
+    description: "Fast pages, clean semantics, and proper metadata are baseline requirements on every project we build — not a premium add-on.",
   },
   {
     icon: HeartHandshake,
-    title: "Long-Term Partnership",
-    description: "We stay with you post-launch. Maintenance, updates, new features, and technical guidance as your business scales.",
+    title: "Reachable Post-Launch",
+    description: "We stay available after launch. When you need to add a feature or fix something under load, you're not starting from scratch with a new team.",
   },
 ];
 
@@ -45,12 +45,11 @@ export default function WhyChooseUs() {
         <AnimatedSection className="text-center mb-16 md:mb-20">
           <span className="section-label">Why Auravon AI</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
-            Engineering Excellence,{" "}
-            <span className="gradient-text">Every Time</span>
+            A Team That{" "}
+            <span className="gradient-text">Gets It Done</span>
           </h2>
           <p className="text-[#8888a8] text-lg max-w-xl mx-auto leading-relaxed">
-            We combine cutting-edge technology with deep business understanding to build
-            digital products that actually drive results.
+            We care about the work, not just the invoice. Here&apos;s what that looks like in practice.
           </p>
         </AnimatedSection>
 

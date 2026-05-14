@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 
-const stats = [
-  { value: "50+", label: "Projects delivered" },
-  { value: "30+", label: "Happy clients" },
-  { value: "5+", label: "Years building" },
+const pillars = [
+  { value: "Ship fast", label: "startup velocity" },
+  { value: "AI-native", label: "by design" },
+  { value: "Clean code", label: "you can own" },
 ];
 
 const codeLines = [
@@ -39,21 +39,21 @@ const codeLines = [
   },
   {
     tokens: [
-      { t: "  scale", c: "text-blue-300" }, { t: ": ", c: "text-[#8888a8]" },
+      { t: "  deploy", c: "text-blue-300" }, { t: ": ", c: "text-[#8888a8]" },
       { t: "'production'", c: "text-emerald-300" },
     ],
   },
   { tokens: [{ t: "});", c: "text-[#f2f2ff]" }] },
   { tokens: [] },
-  { tokens: [{ t: "// ✓ Deployed in 8 weeks", c: "text-[#48486a]" }] },
-  { tokens: [{ t: "// ✓ 99/100 Lighthouse score", c: "text-[#48486a]" }] },
-  { tokens: [{ t: "// ✓ AI-integrated · scales to 1M+ users", c: "text-[#48486a]" }] },
+  { tokens: [{ t: "// ✓ Production-ready · type-safe", c: "text-[#48486a]" }] },
+  { tokens: [{ t: "// ✓ AI-integrated · clean architecture", c: "text-[#48486a]" }] },
+  { tokens: [{ t: "// ✓ Fully documented · yours to maintain", c: "text-[#48486a]" }] },
 ];
 
 const buildMetrics = [
-  { label: "Performance", value: "99/100", color: "text-violet-400" },
-  { label: "Uptime", value: "99.9%", color: "text-sky-400" },
-  { label: "Time to ship", value: "8 wks", color: "text-emerald-400" },
+  { label: "Build", value: "Passing", color: "text-violet-400" },
+  { label: "TypeScript", value: "Strict", color: "text-sky-400" },
+  { label: "Deploy", value: "Ready", color: "text-emerald-400" },
 ];
 
 export default function Hero() {
@@ -63,7 +63,6 @@ export default function Hero() {
       {/* ── Background layers ── */}
       <div className="absolute inset-0 hero-grid" />
 
-      {/* Top-center spotlight — primary ambient */}
       <div
         className="absolute top-0 inset-x-0 h-[520px] pointer-events-none"
         style={{
@@ -72,7 +71,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Soft blue counter-glow — bottom center */}
       <div
         className="absolute bottom-0 inset-x-0 h-[300px] pointer-events-none"
         style={{
@@ -107,12 +105,10 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.07 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-7"
           >
-            Building{" "}
-            <span className="gradient-text">AI-Powered</span>
+            We Build Software
             <br className="hidden sm:block" />
-            {" "}Products for Modern
-            <br className="hidden sm:block" />
-            <span className="text-[#8888a8]">{" "}Businesses</span>
+            {" "}That{" "}
+            <span className="gradient-text">Actually Ships</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -122,8 +118,8 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="text-[#8888a8] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-9"
           >
-            We design and engineer scalable websites, AI systems, SaaS platforms,
-            and mobile apps — built for growth from day one.
+            We&apos;re a small engineering team that helps founders build web apps,
+            AI systems, and SaaS products — from idea to production.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -134,32 +130,32 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-11"
           >
             <Link href="/contact" className="btn-primary !py-3.5 !px-7 text-[15px]">
-              Book Free Consultation
+              Discuss Your Project
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/projects" className="btn-secondary !py-3.5 !px-7 text-[15px]">
-              View Our Work
+              See Our Work
             </Link>
           </motion.div>
 
-          {/* Stats row */}
+          {/* Pillars row */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.32 }}
             className="flex items-center justify-center"
           >
-            {stats.map(({ value, label }, i) => (
-              <div key={label} className="flex items-center">
+            {pillars.map(({ value, label }, i) => (
+              <div key={value} className="flex items-center">
                 <div className="px-5 md:px-8 text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-white leading-none mb-1">
+                  <div className="text-lg md:text-xl font-bold text-white leading-none mb-1">
                     {value}
                   </div>
                   <div className="text-[11px] text-[#48486a] tracking-wide uppercase">
                     {label}
                   </div>
                 </div>
-                {i < stats.length - 1 && (
+                {i < pillars.length - 1 && (
                   <div className="h-8 w-px bg-white/[0.07]" />
                 )}
               </div>
@@ -174,12 +170,10 @@ export default function Hero() {
           transition={{ duration: 0.75, delay: 0.38, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl mx-auto"
         >
-          {/* Floating wrapper */}
           <motion.div
             animate={{ y: [0, -9, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
-            {/* Outer glow ring */}
             <div className="rounded-[1.125rem] p-px bg-gradient-to-b from-white/[0.09] to-white/[0.03] shadow-[0_40px_80px_rgba(0,0,0,0.55),0_0_60px_rgba(124,58,237,0.07)]">
               <div className="rounded-2xl bg-[#07071a] overflow-hidden">
 
@@ -195,7 +189,6 @@ export default function Hero() {
                       auravon-build.ts
                     </span>
                   </div>
-                  {/* balance spacer */}
                   <div className="w-[52px]" />
                 </div>
 

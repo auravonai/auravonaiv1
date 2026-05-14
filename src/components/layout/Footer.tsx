@@ -36,8 +36,8 @@ const emails = [
 ];
 
 const socials = [
-  { icon: X, href: "https://twitter.com/auravonai", label: "X / Twitter" },
-  { icon: Globe, href: "https://linkedin.com/company/auravonai", label: "LinkedIn" },
+  { icon: X, href: "https://x.com/Auravon_Ai", label: "X / Twitter" },
+  { icon: Globe, href: "https://www.linkedin.com/company/auravon-ai-tech/", label: "LinkedIn" },
   { icon: Code2, href: "https://github.com/auravonai", label: "GitHub" },
   { icon: MessageCircle, href: "https://wa.me/918814012395", label: "WhatsApp" },
 ];
@@ -62,8 +62,11 @@ export default function Footer() {
               </span>
             </Link>
 
-            <p className="text-[13px] text-[#8888a8] leading-relaxed max-w-[280px] mb-6">
-              Building AI-powered digital products for modern businesses. From startups to enterprises, we engineer solutions that scale.
+            <p className="text-[13px] text-[#8888a8] leading-relaxed max-w-[280px] mb-1">
+              A small engineering studio building web apps, AI systems, and SaaS products. Based in India, working with founders globally.
+            </p>
+            <p className="text-[11px] text-[#48486a] mb-6">
+              We typically respond within 24 hours.
             </p>
 
             {/* Socials */}
@@ -160,7 +163,7 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[12px] text-[#48486a]">
-            © {new Date().getFullYear()} Auravon AI. All rights reserved. Registered in India.
+            © {new Date().getFullYear()} Auravon AI · Indie engineering studio · India
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-5">

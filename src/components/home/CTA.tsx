@@ -20,22 +20,23 @@ export default function CTA() {
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-xs font-medium text-[#8888a8]">
-                Available for new projects — response within 24 hours
+                Taking on new projects · We typically respond within a day
               </span>
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
-              Ready to Build Your{" "}
-              <span className="gradient-text">Next Digital Product?</span>
+              Have a Product Idea?{" "}
+              <span className="gradient-text">Let&apos;s Talk.</span>
             </h2>
 
             <p className="text-[#8888a8] text-lg max-w-xl mx-auto leading-relaxed mb-10">
-              Book a free 30-minute strategy call and get a clear roadmap for your digital product — no commitment required.
+              Share what you&apos;re building and we&apos;ll map out the technical approach,
+              timeline, and scope together — no sales pitch, just an honest conversation.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/contact" className="btn-primary text-[15px] !py-3.5 !px-7">
-                Start Your Project
+                Start the Conversation
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
@@ -52,8 +53,8 @@ export default function CTA() {
             {/* Trust points */}
             <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-[12px] text-[#48486a]">
               {[
-                "Free consultation",
                 "No commitment required",
+                "Free initial consultation",
                 "Proposal within 3 business days",
               ].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">

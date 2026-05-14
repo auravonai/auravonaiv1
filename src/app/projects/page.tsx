@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import ProjectsPageContent from "@/components/pages/ProjectsPageContent";
 
 export const metadata: Metadata = {
-  title: "Projects — Portfolio of AI, Web, Mobile & SaaS Work",
+  title: "Projects — Engineering Portfolio",
   description:
-    "Browse Auravon AI's portfolio of web development, mobile apps, AI solutions, and SaaS products. Real projects with measurable results.",
+    "A selection of web apps, mobile products, AI integrations, and internal tools built by Auravon AI for founders and engineering teams.",
+  openGraph: {
+    title: "Projects | Auravon AI",
+    description:
+      "Real software built for real business problems — web apps, mobile products, AI systems, and internal tools.",
+  },
 };
 
 export default function ProjectsPage() {

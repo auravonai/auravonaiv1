@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers, Brain, Zap, Shield, Rocket } from "lucide-react";
+import { Layers, Brain, Zap, GitBranch, Users } from "lucide-react";
 
 const capabilities = [
-  { icon: Layers, label: "Modern Tech Stack" },
-  { icon: Brain, label: "AI-Powered Solutions" },
-  { icon: Zap, label: "Fast Delivery" },
-  { icon: Rocket, label: "Scalable Architecture" },
-  { icon: Shield, label: "Enterprise Security" },
+  { icon: Layers, label: "Scalable Architecture" },
+  { icon: Brain, label: "AI Integration" },
+  { icon: Zap, label: "Startup Velocity" },
+  { icon: GitBranch, label: "Clean Codebase" },
+  { icon: Users, label: "Direct Communication" },
 ];
 
 export default function TrustSection() {
@@ -25,9 +25,9 @@ export default function TrustSection() {
             transition={{ duration: 0.5 }}
             className="text-[#8888a8] text-base md:text-lg leading-relaxed max-w-xl lg:max-w-sm shrink-0 text-center lg:text-left"
           >
-            <span className="text-[#d4d4f0] font-semibold">Auravon AI</span> helps startups and
-            businesses transform ideas into scalable digital products using modern technologies
-            and AI automation.
+            <span className="text-[#d4d4f0] font-semibold">Auravon AI</span> is a small,
+            focused engineering team. We build software that solves real problems — without
+            unnecessary complexity or bloated process.
           </motion.p>
 
           {/* Divider */}

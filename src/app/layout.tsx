@@ -2,6 +2,7 @@ import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
 const inter = Inter({
@@ -79,7 +80,9 @@ export const metadata: Metadata = {
     canonical: 'https://auravonai.com',
   },
   icons: {
-    icon: '/favicon.png',
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
 };
 
@@ -115,11 +118,44 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Auravon AI',
+              url: 'https://auravonai.com',
+              description:
+                'AI-Powered Software & Digital Product Studio — web apps, SaaS, mobile, AI systems, and automation.',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://auravonai.com/blog?q={search_term_string}',
+                },
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
       </head>
       <body className="bg-[#030308] text-[#f0f0ff] antialiased min-h-screen w-full min-w-0">
         <Navbar />
         <main className="w-full min-w-0">{children}</main>
         <Footer />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-10N63FS2SB"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-10N63FS2SB');
+          `}
+        </Script>
       </body>
     </html>
   );

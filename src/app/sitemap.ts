@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPosts = [
     "building-ai-powered-saas-2025",
-    "nextjs-15-performance-optimization",
+    "nextjs-performance-optimization",
     "rag-chatbot-langchain-guide",
     "saas-pricing-strategy-startups",
     "whatsapp-automation-business",

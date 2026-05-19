@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  redirects: async () => [
+    {
+      source: "/:path*",
+      has: [{ type: "host", value: "www.auravonai.com" }],
+      destination: "https://auravonai.com/:path*",
+      permanent: true,
+    },
+  ],
   headers: async () => [
     {
       source: "/(.*)",

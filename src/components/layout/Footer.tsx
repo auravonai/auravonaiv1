@@ -36,7 +36,7 @@ const emails = [
 ];
 
 const socials = [
-  { icon: X, href: "https://x.com/Auravon_Ai", label: "X / Twitter" },
+  { icon: X, href: "https://x.com/auravonai", label: "X / Twitter" },
   { icon: Globe, href: "https://www.linkedin.com/company/auravon-ai-tech/", label: "LinkedIn" },
   { icon: Code2, href: "https://github.com/auravonai", label: "GitHub" },
   { icon: MessageCircle, href: "https://wa.me/918814012395", label: "WhatsApp" },

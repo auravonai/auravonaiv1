@@ -111,7 +111,7 @@ export default function RootLayout({
                 contactType: 'customer support',
               },
               sameAs: [
-                'https://twitter.com/auravonai',
+                'https://x.com/auravonai',
                 'https://linkedin.com/company/auravonai',
                 'https://github.com/auravonai',
               ],

@@ -18,10 +18,200 @@ export type Article = {
   accent: string;
   author: string;
   authorRole: string;
+  image: string;
   content: ContentBlock[];
 };
 
 export const articles: Article[] = [
+  {
+    slug: "vibe-coding-ai-development-2025",
+    title: "Vibe Coding in 2025: What's Real, What's Hype, and What It Means for Builders",
+    excerpt:
+      "Andrej Karpathy coined the term in February 2025 and every developer had an opinion. We've shipped real products using AI-assisted development. Here's what the hype gets right — and what silently breaks when you build on vibes.",
+    category: "AI Solutions",
+    readTime: "10 min read",
+    date: "May 15, 2025",
+    featured: false,
+    tags: ["Vibe Coding", "AI", "Cursor", "Developer Productivity"],
+    accent: "rose",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
+    author: "Auravon AI",
+    authorRole: "Engineering Studio",
+    content: [
+      {
+        type: "paragraph",
+        text: "In February 2025, Andrej Karpathy posted a short thread describing a programming style he called 'vibe coding': fully give in to the vibes, embrace exponentials, forget that the code even exists. You tell an AI what you want, accept the output, and when something breaks you describe the error back to the AI and keep going. The post went viral. Half a million developers had an opinion within 48 hours.",
+      },
+      {
+        type: "paragraph",
+        text: "Seven months later, we've used AI-assisted development on more than a dozen production projects. This isn't a take. It's a field report. Here's what genuinely changed, what the enthusiasts oversell, and what the skeptics miss.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "what-vibe-coding-actually-is",
+        text: "What vibe coding actually is (and isn't)",
+      },
+      {
+        type: "paragraph",
+        text: "Karpathy's original definition is more radical than how the term gets used now. He described completely surrendering understanding — not reviewing output, not maintaining a mental model of the codebase, just vibing until it works. That's a specific and useful mode for throwaway code: personal scripts, quick prototypes you'll delete, one-off data pipelines.",
+      },
+      {
+        type: "paragraph",
+        text: "What most developers actually do — and what we do — is better described as AI-accelerated development. You understand what you're building. You use AI to write the mechanical parts faster. You review the output critically before it ships. The vibes are high, the engineering is still real. This distinction matters because conflating the two leads to mistakes that only surface in production.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "where-it-genuinely-accelerates",
+        text: "Where AI-assisted development genuinely accelerates",
+      },
+      {
+        type: "paragraph",
+        text: "There are specific categories of work where AI generates code that's correct, idiomatic, and complete on the first or second attempt. Knowing these categories is the primary skill of working with AI tools effectively.",
+      },
+      {
+        type: "list",
+        items: [
+          "Boilerplate and scaffolding — CRUD routes, form components, database migrations, Prisma schemas. These are well-defined, mechanical, and have no business logic. AI handles them near-perfectly.",
+          "Test generation — given a function, writing unit tests is something AI does faster and more thoroughly than most developers. Coverage goes up dramatically with minimal effort.",
+          "Data transformation — ETL scripts, format converters, one-off analysis. The logic is stateless, isolated, and easy to verify by inspection.",
+          "UI component variants — if you have a design system, generating variants of existing components (different sizes, states, themes) is nearly instant.",
+          "Documentation and type generation — JSDoc, TypeScript types from JSON schemas, function parameter docs. Completely offloadable.",
+          "Regex and query building — SQL query construction and regex patterns are areas where AI is consistently better than working from memory.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "where-it-silently-breaks",
+        text: "Where it silently breaks production",
+      },
+      {
+        type: "paragraph",
+        text: "The failure modes of pure vibe coding don't announce themselves. The code passes review. The tests pass. The demo works. The problem surfaces weeks later — sometimes in a security audit, sometimes in a customer's data.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        id: "auth-and-authorization",
+        text: "Authorization logic",
+      },
+      {
+        type: "paragraph",
+        text: "AI-generated authorization code tends to be structurally correct but logically incomplete. A route that checks `if (user.role === 'admin')` looks right. It misses the case where a non-admin user passes an admin's ID in the request body and the check happens on the wrong object. Authorization bugs are subtle — they require thinking about what an adversarial user would try, not what a cooperative user would do. AI optimizes for the cooperative case.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        id: "multi-tenant-data-isolation",
+        text: "Multi-tenant data isolation",
+      },
+      {
+        type: "paragraph",
+        text: "Ask an AI to write a function that queries orders for a user and it'll write a clean, correct query. Ask it to write the same function in a multi-tenant SaaS context and there's a real chance the tenantId filter gets dropped somewhere in refactoring. Tenant isolation is a correctness property that requires sustained attention — not the kind of thing that shows up in a five-second code review.",
+      },
+      {
+        type: "code",
+        lang: "typescript",
+        code: `// What AI writes — looks right, missing tenant scope
+async function getUserOrders(userId: string) {
+  return db.order.findMany({ where: { userId } });
+}
+
+// What you actually need in a multi-tenant context
+async function getUserOrders(userId: string, tenantId: string) {
+  return db.order.findMany({
+    where: {
+      userId,
+      tenantId, // Drop this and Tenant A can read Tenant B's orders
+    },
+  });
+}`,
+      },
+      {
+        type: "heading",
+        level: 3,
+        id: "error-handling-at-scale",
+        text: "Error handling at scale",
+      },
+      {
+        type: "paragraph",
+        text: "AI-generated error handling is optimistic. It catches errors and logs them, but the handling is often generic — a caught exception that returns `{ error: 'Something went wrong' }` without distinguishing a validation error from a database failure from an unexpected crash. At small scale this is fine. At production scale it makes on-call debugging painful and alerting useless.",
+      },
+      {
+        type: "note",
+        text: "The canonical vibe coding failure pattern: a startup ships an AI-built product. Onboarding is smooth, demos go well. Three months in, they discover their file upload endpoint doesn't validate file types server-side — only client-side. The AI wrote both sides without connecting the invariant that server-side validation is mandatory regardless of what the client sends.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "how-we-use-it",
+        text: "How we actually use it at Auravon AI",
+      },
+      {
+        type: "paragraph",
+        text: "Our workflow has stabilized around a clear separation: we don't delegate decisions that have security or correctness implications we can't fully verify by reading. Everything else is fair game. The rule is that simple.",
+      },
+      {
+        type: "code",
+        lang: "typescript",
+        code: `// AI writes this in ~8 seconds. We review one thing: that tenantId
+// comes from the session, never from the request body.
+export async function POST(req: Request) {
+  const session = await getServerSession(authOptions);
+  if (!session) return new Response("Unauthorized", { status: 401 });
+
+  const body = await req.json();
+  const parsed = createProjectSchema.safeParse(body);
+  if (!parsed.success) {
+    return Response.json({ errors: parsed.error.errors }, { status: 400 });
+  }
+
+  const project = await db.project.create({
+    data: {
+      ...parsed.data,
+      tenantId: session.user.tenantId, // Must come from session, not body
+      createdById: session.user.id,
+    },
+  });
+
+  return Response.json(project, { status: 201 });
+}`,
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "the-right-mental-model",
+        text: "The right mental model",
+      },
+      {
+        type: "quote",
+        text: "Vibe coding is excellent for writing code. It's poor for designing systems. Writing code is mostly mechanical execution of a known solution — AI handles it well. Designing systems requires reasoning about failure modes, adversarial inputs, and second-order effects that AI doesn't spontaneously surface.",
+        source: "Auravon AI, after a lot of production miles",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "what-it-means-for-developers",
+        text: "What this means for developers in 2025",
+      },
+      {
+        type: "paragraph",
+        text: "The developers who use AI tools best aren't the ones who delegate the most — they're the ones who delegate correctly. The leverage is real: a good AI-augmented developer genuinely produces two to four times the output. But the output still needs to meet the same standard.",
+      },
+      {
+        type: "list",
+        items: [
+          "The skill that matters most is knowing which output to trust without deep review (boilerplate, tests, type definitions) and which requires careful reading (auth, data access, configuration, anything security-adjacent).",
+          "Prototyping speed has genuinely increased. MVPs that took 3 weeks now take 8 days. This changes how you structure discovery and validation.",
+          "AI does not know your system's invariants unless you tell it. Document your key constraints (every query must be tenant-scoped, all validation must be server-side) in a CLAUDE.md or system prompt.",
+          "Code review becomes more important, not less. When code is written faster, the review bottleneck concentrates earlier. The burden doesn't disappear — it moves.",
+          "Junior developers using AI without understanding are accumulating technical debt at a faster rate than before. The code looks right and has bugs that are harder to find because they're subtle, not obvious.",
+        ],
+      },
+    ],
+  },
   {
     slug: "building-ai-powered-saas-2025",
     title: "Building AI-Powered SaaS Products in 2025: Architecture That Holds Up",
@@ -33,6 +223,7 @@ export const articles: Article[] = [
     featured: true,
     tags: ["AI", "SaaS", "Architecture", "LLM"],
     accent: "violet",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80",
     author: "Auravon AI",
     authorRole: "Engineering Studio",
     content: [
@@ -261,6 +452,7 @@ async function getAIResponse(query: string, tenantId: string) {
     featured: true,
     tags: ["Next.js", "Performance", "SEO"],
     accent: "blue",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80",
     author: "Auravon AI",
     authorRole: "Engineering Studio",
     content: [
@@ -426,6 +618,7 @@ ANALYZE=true next build`,
     featured: false,
     tags: ["RAG", "LangChain", "Vector DB", "OpenAI"],
     accent: "cyan",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=1200&q=80",
     author: "Auravon AI",
     authorRole: "Engineering Studio",
     content: [
@@ -529,6 +722,7 @@ def build_prompt(query: str, context_chunks: list[str]) -> list[dict]:
     featured: false,
     tags: ["SaaS", "Pricing", "Growth"],
     accent: "emerald",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
     author: "Auravon AI",
     authorRole: "Engineering Studio",
     content: [
@@ -599,6 +793,7 @@ def build_prompt(query: str, context_chunks: list[str]) -> list[dict]:
     featured: false,
     tags: ["WhatsApp", "Automation", "n8n"],
     accent: "orange",
+    image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=1200&q=80",
     author: "Auravon AI",
     authorRole: "Engineering Studio",
     content: [
@@ -680,6 +875,7 @@ export async function POST(req: Request) {
     featured: false,
     tags: ["React Native", "Flutter", "Mobile"],
     accent: "pink",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
     author: "Auravon AI",
     authorRole: "Engineering Studio",
     content: [
@@ -745,6 +941,7 @@ export async function POST(req: Request) {
     featured: false,
     tags: ["Startup", "Tech Stack", "Architecture"],
     accent: "indigo",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
     author: "Auravon AI",
     authorRole: "Engineering Studio",
     content: [
@@ -835,6 +1032,7 @@ model User {
     featured: false,
     tags: ["PostgreSQL", "Database", "Performance"],
     accent: "blue",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
     author: "Auravon AI",
     authorRole: "Engineering Studio",
     content: [

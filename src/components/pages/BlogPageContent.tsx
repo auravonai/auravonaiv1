@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, Clock, ArrowRight, TrendingUp, Calendar } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { articles } from "@/lib/articles";
@@ -17,6 +18,7 @@ const accentMap: Record<string, { text: string; bg: string; border: string }> = 
   orange: { text: "text-orange-400", bg: "bg-orange-500/10", border: "border-orange-500/15" },
   pink:   { text: "text-pink-400",   bg: "bg-pink-500/10",   border: "border-pink-500/15" },
   indigo: { text: "text-indigo-400", bg: "bg-indigo-500/10", border: "border-indigo-500/15" },
+  rose:   { text: "text-rose-400",   bg: "bg-rose-500/10",   border: "border-rose-500/15" },
 };
 
 export default function BlogPageContent() {
@@ -84,34 +86,51 @@ export default function BlogPageContent() {
                   >
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="group flex flex-col rounded-2xl bg-[#090918] border border-white/[0.07] p-6 md:p-7 hover:border-white/[0.14] hover:-translate-y-0.5 transition-all duration-200 h-full"
+                      className="group flex flex-col rounded-2xl bg-[#090918] border border-white/[0.07] overflow-hidden hover:border-white/[0.18] hover:-translate-y-1 transition-all duration-300 h-full shadow-lg hover:shadow-violet-500/5"
                     >
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className={`px-2.5 py-1 rounded-lg border text-[11px] font-medium ${ac.text} ${ac.bg} ${ac.border}`}>
-                          {post.category}
-                        </span>
-                        <span className="text-[12px] text-[#48486a] flex items-center gap-1">
-                          <Clock className="w-3 h-3" /> {post.readTime}
-                        </span>
-                        <span className="text-[12px] text-[#48486a] flex items-center gap-1 ml-auto">
-                          <Calendar className="w-3 h-3" /> {post.date}
-                        </span>
-                      </div>
-                      <h2 className="text-[17px] font-bold text-white mb-2 leading-snug group-hover:text-[#e8e8ff] transition-colors flex-1">
-                        {post.title}
-                      </h2>
-                      <p className="text-[13px] text-[#8888a8] leading-relaxed mb-4">{post.excerpt}</p>
-                      <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
-                        <div className="flex flex-wrap gap-1.5">
-                          {post.tags.slice(0, 3).map((tag) => (
-                            <span key={tag} className="px-2 py-0.5 text-[11px] text-[#8888a8] bg-[#0d0d1e] border border-white/[0.06] rounded-lg">
-                              {tag}
-                            </span>
-                          ))}
+                      {/* Cover image */}
+                      <div className="relative h-52 w-full overflow-hidden">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#090918] via-[#090918]/20 to-transparent" />
+                        <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                          <span className={`px-2.5 py-1 rounded-lg border text-[11px] font-medium backdrop-blur-sm ${ac.text} ${ac.bg} ${ac.border}`}>
+                            {post.category}
+                          </span>
+                          <span className="text-[11px] text-white/60 flex items-center gap-1 backdrop-blur-sm bg-black/20 px-2 py-1 rounded-lg">
+                            <Clock className="w-3 h-3" /> {post.readTime}
+                          </span>
                         </div>
-                        <span className={`inline-flex items-center gap-1 text-[13px] font-medium ${ac.text}`}>
-                          Read <ArrowRight className="w-3.5 h-3.5" />
-                        </span>
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex flex-col flex-1 p-6">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-[12px] text-[#48486a] flex items-center gap-1">
+                            <Calendar className="w-3 h-3" /> {post.date}
+                          </span>
+                        </div>
+                        <h2 className="text-[18px] font-bold text-white mb-2.5 leading-snug group-hover:text-[#e8e8ff] transition-colors flex-1">
+                          {post.title}
+                        </h2>
+                        <p className="text-[13px] text-[#8888a8] leading-relaxed mb-5 line-clamp-2">{post.excerpt}</p>
+                        <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
+                          <div className="flex flex-wrap gap-1.5">
+                            {post.tags.slice(0, 3).map((tag) => (
+                              <span key={tag} className="px-2 py-0.5 text-[11px] text-[#8888a8] bg-[#0d0d1e] border border-white/[0.06] rounded-lg">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <span className={`inline-flex items-center gap-1 text-[13px] font-medium ${ac.text}`}>
+                            Read <ArrowRight className="w-3.5 h-3.5" />
+                          </span>
+                        </div>
                       </div>
                     </Link>
                   </motion.div>
@@ -161,36 +180,51 @@ export default function BlogPageContent() {
                   >
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="group flex flex-col rounded-2xl bg-[#090918] border border-white/[0.07] p-5 md:p-6 hover:border-white/[0.14] hover:-translate-y-0.5 transition-all duration-200 h-full"
+                      className="group flex flex-col rounded-2xl bg-[#090918] border border-white/[0.07] overflow-hidden hover:border-white/[0.16] hover:-translate-y-1 transition-all duration-300 h-full shadow-lg hover:shadow-violet-500/5"
                     >
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className={`px-2 py-0.5 rounded-lg border text-[11px] font-medium ${ac.text} ${ac.bg} ${ac.border}`}>
-                          {post.category}
-                        </span>
-                        <span className="text-[11px] text-[#48486a] flex items-center gap-1">
-                          <Clock className="w-3 h-3" /> {post.readTime}
-                        </span>
+                      {/* Cover image */}
+                      <div className="relative h-44 w-full overflow-hidden">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#090918]/80 via-transparent to-transparent" />
                       </div>
 
-                      <h3 className="text-[14px] font-semibold text-white mb-1.5 leading-snug group-hover:text-[#e8e8ff] transition-colors flex-1">
-                        {post.title}
-                      </h3>
-                      <p className="text-[12px] text-[#48486a] flex items-center gap-1 mb-3">
-                        <Calendar className="w-3 h-3" /> {post.date}
-                      </p>
-                      <p className="text-[13px] text-[#8888a8] leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
-
-                      <div className="flex items-center justify-between pt-3 border-t border-white/[0.06] mt-auto">
-                        <div className="flex flex-wrap gap-1.5">
-                          {post.tags.slice(0, 2).map((tag) => (
-                            <span key={tag} className="px-2 py-0.5 text-[11px] text-[#48486a] bg-[#0d0d1e] border border-white/[0.06] rounded-lg">
-                              {tag}
-                            </span>
-                          ))}
+                      {/* Content */}
+                      <div className="flex flex-col flex-1 p-5">
+                        <div className="flex items-center gap-2 mb-2.5">
+                          <span className={`px-2 py-0.5 rounded-lg border text-[11px] font-medium ${ac.text} ${ac.bg} ${ac.border}`}>
+                            {post.category}
+                          </span>
+                          <span className="text-[11px] text-[#48486a] flex items-center gap-1">
+                            <Clock className="w-3 h-3" /> {post.readTime}
+                          </span>
                         </div>
-                        <span className={`text-[12px] font-medium ${ac.text} flex items-center gap-1`}>
-                          Read <ArrowRight className="w-3 h-3" />
-                        </span>
+
+                        <h3 className="text-[14px] font-semibold text-white mb-1.5 leading-snug group-hover:text-[#e8e8ff] transition-colors flex-1 line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-[12px] text-[#48486a] flex items-center gap-1 mb-2.5">
+                          <Calendar className="w-3 h-3" /> {post.date}
+                        </p>
+                        <p className="text-[12.5px] text-[#8888a8] leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
+
+                        <div className="flex items-center justify-between pt-3 border-t border-white/[0.06] mt-auto">
+                          <div className="flex flex-wrap gap-1.5">
+                            {post.tags.slice(0, 2).map((tag) => (
+                              <span key={tag} className="px-2 py-0.5 text-[11px] text-[#48486a] bg-[#0d0d1e] border border-white/[0.06] rounded-lg">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <span className={`text-[12px] font-medium ${ac.text} flex items-center gap-1`}>
+                            Read <ArrowRight className="w-3 h-3" />
+                          </span>
+                        </div>
                       </div>
                     </Link>
                   </motion.div>

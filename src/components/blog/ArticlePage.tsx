@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   Clock,
@@ -15,14 +16,15 @@ import {
 } from "lucide-react";
 import type { Article, ContentBlock } from "@/lib/articles";
 
-const accentMap: Record<string, { text: string; bg: string; border: string; bar: string }> = {
-  violet: { text: "text-violet-400", bg: "bg-violet-500/10", border: "border-violet-500/20", bar: "bg-violet-500" },
-  blue:   { text: "text-blue-400",   bg: "bg-blue-500/10",   border: "border-blue-500/20",   bar: "bg-blue-500" },
-  cyan:   { text: "text-cyan-400",   bg: "bg-cyan-500/10",   border: "border-cyan-500/20",   bar: "bg-cyan-500" },
-  emerald:{ text: "text-emerald-400",bg: "bg-emerald-500/10",border: "border-emerald-500/20",bar: "bg-emerald-500" },
-  orange: { text: "text-orange-400", bg: "bg-orange-500/10", border: "border-orange-500/20", bar: "bg-orange-500" },
-  pink:   { text: "text-pink-400",   bg: "bg-pink-500/10",   border: "border-pink-500/20",   bar: "bg-pink-500" },
-  indigo: { text: "text-indigo-400", bg: "bg-indigo-500/10", border: "border-indigo-500/20", bar: "bg-indigo-500" },
+const accentMap: Record<string, { text: string; bg: string; border: string; bar: string; glow: string }> = {
+  violet: { text: "text-violet-400", bg: "bg-violet-500/10", border: "border-violet-500/20", bar: "bg-violet-500", glow: "shadow-violet-500/10" },
+  blue:   { text: "text-blue-400",   bg: "bg-blue-500/10",   border: "border-blue-500/20",   bar: "bg-blue-500",   glow: "shadow-blue-500/10" },
+  cyan:   { text: "text-cyan-400",   bg: "bg-cyan-500/10",   border: "border-cyan-500/20",   bar: "bg-cyan-500",   glow: "shadow-cyan-500/10" },
+  emerald:{ text: "text-emerald-400",bg: "bg-emerald-500/10",border: "border-emerald-500/20",bar: "bg-emerald-500",glow: "shadow-emerald-500/10" },
+  orange: { text: "text-orange-400", bg: "bg-orange-500/10", border: "border-orange-500/20", bar: "bg-orange-500", glow: "shadow-orange-500/10" },
+  pink:   { text: "text-pink-400",   bg: "bg-pink-500/10",   border: "border-pink-500/20",   bar: "bg-pink-500",   glow: "shadow-pink-500/10" },
+  indigo: { text: "text-indigo-400", bg: "bg-indigo-500/10", border: "border-indigo-500/20", bar: "bg-indigo-500", glow: "shadow-indigo-500/10" },
+  rose:   { text: "text-rose-400",   bg: "bg-rose-500/10",   border: "border-rose-500/20",   bar: "bg-rose-500",   glow: "shadow-rose-500/10" },
 };
 
 // ── Reading Progress Bar ──────────────────────────────────────────────────────
@@ -34,7 +36,7 @@ function ProgressBar({ accent }: { accent: string }) {
   return (
     <motion.div
       style={{ scaleX, transformOrigin: "0% 50%" }}
-      className={`fixed top-0 left-0 right-0 h-[2px] z-50 ${ac.bar}`}
+      className={`fixed top-0 left-0 right-0 h-[3px] z-50 ${ac.bar}`}
     />
   );
 }
@@ -50,17 +52,24 @@ function CodeBlock({ lang, code }: { lang: string; code: string }) {
   }
 
   return (
-    <div className="my-6 rounded-xl overflow-hidden border border-white/[0.07] bg-[#07070f]">
-      <div className="flex items-center justify-between px-4 py-2 border-b border-white/[0.06] bg-[#09091a]">
-        <span className="text-[11px] font-mono text-[#48486a] uppercase tracking-wider">{lang}</span>
+    <div className="my-7 rounded-xl overflow-hidden border border-white/[0.08] bg-[#06060f] shadow-xl">
+      <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.06] bg-[#09091a]">
+        <div className="flex items-center gap-2">
+          <div className="flex gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+          </div>
+          <span className="text-[11px] font-mono text-[#48486a] uppercase tracking-wider ml-1">{lang}</span>
+        </div>
         <button
           onClick={copy}
-          className="flex items-center gap-1.5 text-[11px] text-[#48486a] hover:text-white transition-colors"
+          className="flex items-center gap-1.5 text-[11px] text-[#48486a] hover:text-white transition-colors px-2 py-1 rounded-lg hover:bg-white/5"
         >
           {copied ? (
             <>
               <Check className="w-3 h-3 text-emerald-400" />
-              <span className="text-emerald-400">Copied</span>
+              <span className="text-emerald-400">Copied!</span>
             </>
           ) : (
             <>
@@ -83,18 +92,21 @@ type TocItem = { id: string; text: string; level: 2 | 3 };
 function TableOfContents({
   items,
   activeId,
+  accent,
 }: {
   items: TocItem[];
   activeId: string;
+  accent: string;
 }) {
+  const ac = accentMap[accent] || accentMap.violet;
   if (items.length === 0) return null;
 
   return (
-    <nav className="hidden xl:block sticky top-28 self-start w-56 shrink-0">
-      <p className="text-[10px] font-semibold uppercase tracking-widest text-[#48486a] mb-3">
+    <nav className="hidden xl:block sticky top-28 self-start w-60 shrink-0">
+      <p className="text-[10px] font-semibold uppercase tracking-widest text-[#48486a] mb-4">
         On this page
       </p>
-      <ul className="space-y-1">
+      <ul className="space-y-0.5">
         {items.map((item) => (
           <li key={item.id} style={{ paddingLeft: item.level === 3 ? "12px" : "0" }}>
             <a
@@ -103,13 +115,16 @@ function TableOfContents({
                 e.preventDefault();
                 document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
-              className={`block text-[12px] leading-relaxed py-0.5 transition-colors ${
+              className={`flex items-center gap-2 text-[12px] leading-relaxed py-1.5 px-2 rounded-lg transition-all ${
                 activeId === item.id
-                  ? "text-white font-medium"
-                  : "text-[#48486a] hover:text-[#8888a8]"
+                  ? `${ac.text} font-medium ${ac.bg}`
+                  : "text-[#48486a] hover:text-[#9898b8] hover:bg-white/[0.03]"
               }`}
             >
-              {item.text}
+              {activeId === item.id && (
+                <span className={`w-1 h-1 rounded-full ${ac.bar} shrink-0`} />
+              )}
+              <span className={activeId === item.id ? "" : "pl-3"}>{item.text}</span>
             </a>
           </li>
         ))}
@@ -119,11 +134,13 @@ function TableOfContents({
 }
 
 // ── Content Block Renderer ────────────────────────────────────────────────────
-function BlockRenderer({ block }: { block: ContentBlock }) {
+function BlockRenderer({ block, accent }: { block: ContentBlock; accent: string }) {
+  const ac = accentMap[accent] || accentMap.violet;
+
   switch (block.type) {
     case "paragraph":
       return (
-        <p className="text-[15px] leading-[1.8] text-[#b0b0cc] mb-5">{block.text}</p>
+        <p className="text-[15.5px] leading-[1.85] text-[#b8b8d0] mb-5">{block.text}</p>
       );
 
     case "heading":
@@ -131,7 +148,7 @@ function BlockRenderer({ block }: { block: ContentBlock }) {
         return (
           <h2
             id={block.id}
-            className="text-[22px] font-bold text-white mt-10 mb-4 scroll-mt-28"
+            className="text-[22px] font-bold text-white mt-12 mb-4 scroll-mt-28 pb-3 border-b border-white/[0.06]"
           >
             {block.text}
           </h2>
@@ -140,7 +157,7 @@ function BlockRenderer({ block }: { block: ContentBlock }) {
       return (
         <h3
           id={block.id}
-          className="text-[17px] font-semibold text-white mt-8 mb-3 scroll-mt-28"
+          className="text-[17px] font-semibold text-white mt-9 mb-3 scroll-mt-28"
         >
           {block.text}
         </h3>
@@ -151,17 +168,18 @@ function BlockRenderer({ block }: { block: ContentBlock }) {
 
     case "note":
       return (
-        <div className="my-6 px-5 py-4 rounded-xl bg-violet-500/[0.06] border border-violet-500/20">
-          <p className="text-[13px] leading-relaxed text-[#c0c0e0]">{block.text}</p>
+        <div className={`my-7 px-5 py-4 rounded-xl ${ac.bg} border ${ac.border} relative overflow-hidden`}>
+          <div className={`absolute left-0 top-0 bottom-0 w-0.5 ${ac.bar}`} />
+          <p className="text-[13.5px] leading-relaxed text-[#c8c8e8] pl-1">{block.text}</p>
         </div>
       );
 
     case "list":
       return (
-        <ul className="my-5 space-y-2.5">
+        <ul className="my-6 space-y-3">
           {block.items.map((item, i) => (
-            <li key={i} className="flex gap-3 text-[14px] leading-relaxed text-[#b0b0cc]">
-              <ChevronRight className="w-4 h-4 text-violet-400 shrink-0 mt-0.5" />
+            <li key={i} className="flex gap-3 text-[14.5px] leading-relaxed text-[#b8b8d0]">
+              <ChevronRight className={`w-4 h-4 ${ac.text} shrink-0 mt-0.5`} />
               <span>{item}</span>
             </li>
           ))}
@@ -170,12 +188,12 @@ function BlockRenderer({ block }: { block: ContentBlock }) {
 
     case "quote":
       return (
-        <blockquote className="my-6 pl-5 border-l-2 border-violet-500/40">
-          <p className="text-[15px] leading-relaxed text-[#c0c0e0] italic mb-2">
-            "{block.text}"
+        <blockquote className={`my-8 pl-6 border-l-2 ${ac.border} py-1`}>
+          <p className="text-[16px] leading-relaxed text-[#d0d0e8] italic mb-3">
+            &ldquo;{block.text}&rdquo;
           </p>
           {block.source && (
-            <cite className="text-[12px] text-[#48486a] not-italic">{block.source}</cite>
+            <cite className={`text-[12px] ${ac.text} not-italic font-medium`}>— {block.source}</cite>
           )}
         </blockquote>
       );
@@ -191,21 +209,33 @@ function RelatedCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/blog/${article.slug}`}
-      className="group flex flex-col p-5 rounded-xl bg-[#090918] border border-white/[0.07] hover:border-white/[0.12] transition-all duration-200"
+      className="group flex flex-col rounded-xl bg-[#090918] border border-white/[0.07] overflow-hidden hover:border-white/[0.14] transition-all duration-200 hover:-translate-y-0.5"
     >
-      <div className="flex items-center gap-2 mb-2">
-        <span className={`px-2 py-0.5 rounded-lg border text-[10px] font-medium ${ac.text} ${ac.bg} ${ac.border}`}>
-          {article.category}
-        </span>
-        <span className="text-[11px] text-[#48486a] flex items-center gap-1">
-          <Clock className="w-3 h-3" /> {article.readTime}
-        </span>
+      <div className="relative h-32 w-full overflow-hidden">
+        <Image
+          src={article.image}
+          alt={article.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#090918]/70 to-transparent" />
       </div>
-      <h3 className="text-[13px] font-semibold text-white leading-snug group-hover:text-[#e8e8ff] transition-colors flex-1 mb-3">
-        {article.title}
-      </h3>
-      <div className={`flex items-center gap-1 text-[12px] font-medium ${ac.text}`}>
-        Read article <ArrowRight className="w-3 h-3" />
+      <div className="p-4">
+        <div className="flex items-center gap-2 mb-2">
+          <span className={`px-2 py-0.5 rounded-lg border text-[10px] font-medium ${ac.text} ${ac.bg} ${ac.border}`}>
+            {article.category}
+          </span>
+          <span className="text-[11px] text-[#48486a] flex items-center gap-1">
+            <Clock className="w-3 h-3" /> {article.readTime}
+          </span>
+        </div>
+        <h3 className="text-[13px] font-semibold text-white leading-snug group-hover:text-[#e8e8ff] transition-colors mb-3 line-clamp-2">
+          {article.title}
+        </h3>
+        <div className={`flex items-center gap-1 text-[12px] font-medium ${ac.text}`}>
+          Read article <ArrowRight className="w-3 h-3" />
+        </div>
       </div>
     </Link>
   );
@@ -222,12 +252,10 @@ export default function ArticlePage({
   const ac = accentMap[article.accent] || accentMap.violet;
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Build TOC from headings in content
   const tocItems: TocItem[] = article.content
     .filter((b): b is Extract<ContentBlock, { type: "heading" }> => b.type === "heading")
     .map((b) => ({ id: b.id, text: b.text, level: b.level }));
 
-  // Track active heading via IntersectionObserver
   const [activeId, setActiveId] = useState(tocItems[0]?.id ?? "");
 
   useEffect(() => {
@@ -310,19 +338,34 @@ export default function ArticlePage({
           </div>
         </div>
 
+        {/* ── Hero Image ── */}
+        <div className="max-w-4xl mx-auto px-6 md:px-8 pt-8">
+          <div className={`relative w-full h-[240px] md:h-[380px] rounded-2xl overflow-hidden shadow-2xl ${ac.glow}`}>
+            <Image
+              src={article.image}
+              alt={article.title}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 896px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030308]/60 via-transparent to-transparent" />
+          </div>
+        </div>
+
         {/* ── Body: TOC + Content ── */}
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-16 flex gap-16 items-start">
           {/* Content */}
           <article ref={contentRef} className="flex-1 min-w-0 max-w-3xl mx-auto xl:mx-0">
             {article.content.map((block, i) => (
-              <BlockRenderer key={i} block={block} />
+              <BlockRenderer key={i} block={block} accent={article.accent} />
             ))}
 
             {/* Author card */}
-            <div className="mt-12 pt-8 border-t border-white/[0.06]">
+            <div className="mt-14 pt-8 border-t border-white/[0.06]">
               <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-full bg-violet-500/20 border border-violet-500/30 flex items-center justify-center shrink-0">
-                  <BookOpen className="w-5 h-5 text-violet-400" />
+                <div className={`w-12 h-12 rounded-full ${ac.bg} border ${ac.border} flex items-center justify-center shrink-0`}>
+                  <BookOpen className={`w-5 h-5 ${ac.text}`} />
                 </div>
                 <div>
                   <p className="text-[14px] font-semibold text-white">{article.author}</p>
@@ -333,7 +376,7 @@ export default function ArticlePage({
           </article>
 
           {/* Sticky TOC */}
-          <TableOfContents items={tocItems} activeId={activeId} />
+          <TableOfContents items={tocItems} activeId={activeId} accent={article.accent} />
         </div>
 
         {/* ── Related Articles ── */}

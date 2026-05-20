@@ -1,4 +1,4 @@
-export type ContentBlock =
+﻿export type ContentBlock =
   | { type: "paragraph"; text: string }
   | { type: "heading"; level: 2 | 3; text: string; id: string }
   | { type: "code"; lang: string; code: string }
@@ -25,12 +25,12 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "vibe-coding-ai-development-2025",
-    title: "Vibe Coding in 2025: What's Real, What's Hype, and What It Means for Builders",
+    title: "Vibe Coding in 2026: What's Real, What's Hype, and What It Means for Builders",
     excerpt:
       "Andrej Karpathy coined the term in February 2025 and every developer had an opinion. We've shipped real products using AI-assisted development. Here's what the hype gets right — and what silently breaks when you build on vibes.",
     category: "AI Solutions",
     readTime: "10 min read",
-    date: "May 15, 2025",
+    date: "May 15, 2026",
     featured: false,
     tags: ["Vibe Coding", "AI", "Cursor", "Developer Productivity"],
     accent: "rose",
@@ -44,7 +44,7 @@ export const articles: Article[] = [
       },
       {
         type: "paragraph",
-        text: "Seven months later, we've used AI-assisted development on more than a dozen production projects. This isn't a take. It's a field report. Here's what genuinely changed, what the enthusiasts oversell, and what the skeptics miss.",
+        text: "Over a year later, we've used AI-assisted development on more than a dozen production projects. This isn't a take. It's a field report. Here's what genuinely changed, what the enthusiasts oversell, and what the skeptics miss.",
       },
       {
         type: "heading",
@@ -194,7 +194,7 @@ export async function POST(req: Request) {
         type: "heading",
         level: 2,
         id: "what-it-means-for-developers",
-        text: "What this means for developers in 2025",
+        text: "What this means for developers in 2026",
       },
       {
         type: "paragraph",
@@ -214,12 +214,12 @@ export async function POST(req: Request) {
   },
   {
     slug: "building-ai-powered-saas-2025",
-    title: "Building AI-Powered SaaS Products in 2025: Architecture That Holds Up",
+    title: "Building AI-Powered SaaS Products in 2026: Architecture That Holds Up",
     excerpt:
       "Most teams add AI on top of an existing architecture and wonder why it breaks under load. Here's how to design a SaaS product where AI is a structural component — not an afterthought.",
     category: "AI Solutions",
     readTime: "12 min read",
-    date: "May 10, 2025",
+    date: "May 10, 2026",
     featured: true,
     tags: ["AI", "SaaS", "Architecture", "LLM"],
     accent: "violet",
@@ -448,7 +448,7 @@ async function getAIResponse(query: string, tenantId: string) {
       "Chasing 100/100 Lighthouse scores is its own genre of content. This isn't that. Let's talk about making real Next.js apps measurably faster in ways that affect actual users.",
     category: "Web Development",
     readTime: "9 min read",
-    date: "May 5, 2025",
+    date: "May 5, 2026",
     featured: true,
     tags: ["Next.js", "Performance", "SEO"],
     accent: "blue",
@@ -614,7 +614,7 @@ ANALYZE=true next build`,
       "Most RAG tutorials stop at 'it works in the notebook.' Production RAG is different — chunking that doesn't break context, retrieval that returns relevant results, and LLM calls that handle the window correctly.",
     category: "AI Solutions",
     readTime: "15 min read",
-    date: "April 28, 2025",
+    date: "April 28, 2026",
     featured: false,
     tags: ["RAG", "LangChain", "Vector DB", "OpenAI"],
     accent: "cyan",
@@ -718,7 +718,7 @@ def build_prompt(query: str, context_chunks: list[str]) -> list[dict]:
       "Getting pricing wrong doesn't hurt immediately — you'll see the damage in churned trials, stalled expansions, and deals that go nowhere. Here's what we've seen work across products we've helped build.",
     category: "SaaS",
     readTime: "8 min read",
-    date: "April 22, 2025",
+    date: "April 22, 2026",
     featured: false,
     tags: ["SaaS", "Pricing", "Growth"],
     accent: "emerald",
@@ -784,12 +784,12 @@ def build_prompt(query: str, context_chunks: list[str]) -> list[dict]:
   },
   {
     slug: "whatsapp-automation-business",
-    title: "WhatsApp Business API: Building Reliable Automation for 2025",
+    title: "WhatsApp Business API: Building Reliable Automation for 2026",
     excerpt:
       "The WhatsApp Business API has higher open rates than email and more scale than manual support. Here's how to automate it without creating a brittle, untestable mess.",
     category: "Automation",
     readTime: "10 min read",
-    date: "April 15, 2025",
+    date: "April 15, 2026",
     featured: false,
     tags: ["WhatsApp", "Automation", "n8n"],
     accent: "orange",
@@ -866,12 +866,12 @@ export async function POST(req: Request) {
   },
   {
     slug: "react-native-vs-flutter-2025",
-    title: "React Native vs Flutter in 2025: A Practical Comparison",
+    title: "React Native vs Flutter in 2026: A Practical Comparison",
     excerpt:
       "This comparison exists in thousands of blog posts. Most compare synthetic benchmarks. Here's what we've seen working with both frameworks across real production apps.",
     category: "Mobile Apps",
     readTime: "7 min read",
-    date: "April 8, 2025",
+    date: "April 8, 2026",
     featured: false,
     tags: ["React Native", "Flutter", "Mobile"],
     accent: "pink",
@@ -891,7 +891,7 @@ export async function POST(req: Request) {
       },
       {
         type: "paragraph",
-        text: "React Native's strongest argument in 2025 is the web developer pipeline. If your team knows React, the learning curve to shipping a functional mobile app is dramatically shorter than with Flutter. Sharing business logic, utility functions, and API client code with a Next.js web app is genuinely practical.",
+        text: "React Native's strongest argument in 2026 is the web developer pipeline. If your team knows React, the learning curve to shipping a functional mobile app is dramatically shorter than with Flutter. Sharing business logic, utility functions, and API client code with a Next.js web app is genuinely practical.",
       },
       {
         type: "list",
@@ -932,12 +932,12 @@ export async function POST(req: Request) {
   },
   {
     slug: "startup-tech-stack-2025",
-    title: "The Startup Tech Stack Guide for 2025",
+    title: "The Startup Tech Stack Guide for 2026",
     excerpt:
       "The technical decisions you make in the first few months are hard to undo. Here's what we'd choose if we were starting a SaaS product today, and why.",
     category: "Startup Tech",
     readTime: "11 min read",
-    date: "April 1, 2025",
+    date: "April 1, 2026",
     featured: false,
     tags: ["Startup", "Tech Stack", "Architecture"],
     accent: "indigo",
@@ -957,7 +957,7 @@ export async function POST(req: Request) {
       },
       {
         type: "paragraph",
-        text: "Not a controversial choice in 2025. Server components, file-based routing, image optimization, and a massive ecosystem. TypeScript is non-negotiable — the productivity gains from type safety outweigh the setup cost within weeks, and the errors it catches before runtime are worth the verbosity.",
+        text: "Not a controversial choice in 2026. Server components, file-based routing, image optimization, and a massive ecosystem. TypeScript is non-negotiable — the productivity gains from type safety outweigh the setup cost within weeks, and the errors it catches before runtime are worth the verbosity.",
       },
       {
         type: "heading",
@@ -1028,7 +1028,7 @@ model User {
       "Most PostgreSQL performance problems come down to three things: missing indexes, N+1 queries, or not understanding the query planner. Here's how to diagnose and fix all three.",
     category: "Web Development",
     readTime: "13 min read",
-    date: "March 25, 2025",
+    date: "March 25, 2026",
     featured: false,
     tags: ["PostgreSQL", "Database", "Performance"],
     accent: "blue",

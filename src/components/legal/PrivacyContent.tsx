@@ -23,7 +23,7 @@ export default function PrivacyContent() {
       badge="Legal Document"
       title="Privacy Policy"
       subtitle="Auravon AI respects user privacy and protects all customer information. This policy explains how we collect, use, and safeguard your data."
-      lastUpdated="May 14, 2025"
+      lastUpdated="May 14, 2026"
       sections={sections}
     >
       {/* Overview */}

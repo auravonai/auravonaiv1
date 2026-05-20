@@ -21,7 +21,7 @@ export default function RefundContent() {
       badge="Legal Document"
       title="Refund & Cancellation Policy"
       subtitle="Due to the digital and customized nature of our services, refunds are subject to project stage and work completed. Please read this policy carefully before making a payment."
-      lastUpdated="May 14, 2025"
+      lastUpdated="May 14, 2026"
       sections={sections}
     >
       {/* Overview */}

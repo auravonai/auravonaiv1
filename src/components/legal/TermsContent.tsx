@@ -24,7 +24,7 @@ export default function TermsContent() {
       badge="Legal Document"
       title="Terms & Conditions"
       subtitle="Please read these terms carefully before engaging our services. All project discussions, timelines, and deliverables are finalized before development begins."
-      lastUpdated="May 14, 2025"
+      lastUpdated="May 14, 2026"
       sections={sections}
     >
       {/* Agreement */}

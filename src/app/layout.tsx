@@ -14,27 +14,27 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://auravonai.com'),
   title: {
-    default: 'Auravon AI — AI-Powered Software & Digital Product Studio',
+    default: 'AI Development Company & Custom Software Studio | Auravon AI',
     template: '%s | Auravon AI',
   },
   description:
-    'Auravon AI builds scalable websites, SaaS products, AI-powered systems, mobile apps, and automation solutions for startups and businesses. Modern engineering. AI-first approach.',
+    'Auravon AI is an AI development company building custom software, SaaS products, web apps, mobile apps, and automation systems for startups and businesses. Ship faster with AI-first engineering.',
   keywords: [
     'AI development company',
-    'custom software development',
-    'web development agency',
-    'AI automation services',
-    'mobile app development company',
+    'custom AI software development',
+    'hire AI developer',
+    'AI integration services',
+    'web app development company',
     'SaaS development company',
-    'startup software solutions',
-    'modern web applications',
-    'business automation solutions',
-    'scalable software systems',
-    'Next.js development',
-    'React development agency',
+    'AI automation services',
+    'mobile app development',
+    'startup software development',
     'AI chatbot development',
-    'enterprise software development',
-    'digital transformation company',
+    'custom software for startups',
+    'build SaaS product',
+    'AI-powered web applications',
+    'Next.js development agency',
+    'software development studio',
   ],
   authors: [{ name: 'Auravon AI', url: 'https://auravonai.com' }],
   creator: 'Auravon AI',
@@ -109,6 +109,49 @@ export default function RootLayout({
                 '@type': 'ContactPoint',
                 email: 'support@auravonai.com',
                 contactType: 'customer support',
+              },
+              sameAs: [
+                'https://x.com/auravonai',
+                'https://linkedin.com/company/auravonai',
+                'https://github.com/auravonai',
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ProfessionalService',
+              name: 'Auravon AI',
+              url: 'https://auravonai.com',
+              logo: 'https://auravonai.com/logo.png',
+              image: 'https://auravonai.com/og-image.png',
+              description:
+                'AI development company building custom web apps, SaaS products, mobile apps, AI integrations, and automation systems for startups and businesses.',
+              priceRange: '$$',
+              email: 'support@auravonai.com',
+              areaServed: 'Worldwide',
+              serviceType: [
+                'AI Development',
+                'Custom Software Development',
+                'Web Application Development',
+                'SaaS Development',
+                'Mobile App Development',
+                'AI Chatbot Development',
+                'Business Automation',
+              ],
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Software Development Services',
+                itemListElement: [
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Integration & Chatbot Development' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web Application Development' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SaaS Product Development' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Mobile App Development' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business Automation Systems' } },
+                ],
               },
               sameAs: [
                 'https://x.com/auravonai',

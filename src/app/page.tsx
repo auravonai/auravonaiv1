@@ -10,9 +10,9 @@ import Testimonials from "@/components/home/Testimonials";
 import CTA from "@/components/home/CTA";
 
 export const metadata: Metadata = {
-  title: "Auravon AI — AI-Powered Software & Digital Product Studio",
+  title: "AI Development Company & Custom Software Studio | Auravon AI",
   description:
-    "Auravon AI builds scalable websites, SaaS products, AI-powered systems, mobile apps, and automation solutions for startups and businesses.",
+    "Auravon AI is an AI development company building custom software, SaaS products, web apps, mobile apps, and automation systems for startups and businesses. Ship faster with AI-first engineering.",
 };
 
 export default function HomePage() {

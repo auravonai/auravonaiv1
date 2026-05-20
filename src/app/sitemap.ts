@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const blogPosts = [
+    "ai-app-development-cost-guide",
     "vibe-coding-ai-development-2025",
     "building-ai-powered-saas-2025",
     "nextjs-performance-optimization",

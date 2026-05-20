@@ -448,14 +448,13 @@ export default function ContactPageContent() {
                       <MapPin className="w-5 h-5 text-violet-400" />
                     </div>
                     <p className="text-[12px] font-medium text-[#8888a8]">
-                      India · Remote Worldwide
+                      Remote Worldwide
                     </p>
                   </div>
                 </div>
                 <div className="p-5">
                   <p className="text-[12px] text-[#48486a] leading-relaxed">
-                    We work remotely with clients globally. Our team is based in India, serving
-                    clients across Asia, Europe, and North America.
+                    We work remotely with clients globally across Asia, Europe, North America, and beyond.
                   </p>
                 </div>
               </AnimatedSection>

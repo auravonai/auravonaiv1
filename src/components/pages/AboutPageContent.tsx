@@ -82,7 +82,7 @@ const milestones = [
     year: "2021",
     title: "International Clients",
     description:
-      "First projects outside India. Adapted to async workflows, different time zones, and new ways of collaborating across long-distance engagements.",
+      "First international client projects. Adapted to async workflows, different time zones, and new ways of collaborating across long-distance engagements.",
   },
   {
     year: "2022",
@@ -347,7 +347,7 @@ export default function AboutPageContent() {
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-xs font-medium text-[#8888a8]">
-              Available for new projects · Based in India
+              Available for new projects · Remote Worldwide
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">

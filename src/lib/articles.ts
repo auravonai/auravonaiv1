@@ -1033,7 +1033,7 @@ def build_prompt(query: str, context_chunks: list[str]) -> list[dict]:
     content: [
       {
         type: "paragraph",
-        text: "WhatsApp Business API is the highest-engagement customer communication channel for Indian businesses — open rates that make email look anaemic. The catch: it's more complex to implement correctly than most tutorials suggest, and getting it wrong in production is disruptive.",
+        text: "WhatsApp Business API is the highest-engagement customer communication channel for businesses worldwide — open rates that make email look anaemic. The catch: it's more complex to implement correctly than most tutorials suggest, and getting it wrong in production is disruptive.",
       },
       {
         type: "heading",

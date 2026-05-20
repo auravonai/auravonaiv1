@@ -63,7 +63,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-[13px] text-[#8888a8] leading-relaxed max-w-[280px] mb-1">
-              A small engineering studio building web apps, AI systems, and SaaS products. Based in India, working with founders globally.
+              A small engineering studio building web apps, AI systems, and SaaS products. Working with founders globally.
             </p>
             <p className="text-[11px] text-[#48486a] mb-6">
               We typically respond within 24 hours.
@@ -163,7 +163,7 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[12px] text-[#48486a]">
-            © {new Date().getFullYear()} Auravon AI · Indie engineering studio · India
+            © {new Date().getFullYear()} Auravon AI · Indie engineering studio
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-5">

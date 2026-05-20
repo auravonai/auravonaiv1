@@ -154,7 +154,7 @@ export default function TermsContent() {
         <p>
           We accept payments via <strong>Razorpay</strong>, which supports UPI, credit/debit
           cards, net banking, and EMI options. Bank transfers may be arranged for enterprise
-          projects. All prices are quoted in Indian Rupees (INR) unless otherwise specified.
+          projects. All prices are quoted in INR (Indian Rupees) unless otherwise agreed in writing.
         </p>
 
         <h3>Late Payments</h3>
@@ -167,9 +167,8 @@ export default function TermsContent() {
 
         <h3>Taxes</h3>
         <p>
-          All prices exclude applicable taxes. GST (Goods and Services Tax) will be applied to
-          all invoices as required under Indian tax law. International clients are responsible for
-          any taxes applicable in their jurisdiction.
+          All prices exclude applicable taxes. Applicable taxes will be added to invoices as
+          required by law. Clients are responsible for any taxes applicable in their jurisdiction.
         </p>
 
         <h3>Currency & Pricing</h3>
@@ -454,14 +453,14 @@ export default function TermsContent() {
       <section id="governing-law">
         <h2>Governing Law</h2>
         <p>
-          These Terms are governed by and construed in accordance with the laws of India.
-          Any disputes arising under or in connection with these Terms shall be subject to the
-          exclusive jurisdiction of the courts of India.
+          These Terms are governed by and construed in accordance with applicable law.
+          Any disputes arising under or in connection with these Terms shall be resolved through
+          good-faith negotiation, and if necessary, binding arbitration.
         </p>
         <p>
-          For international clients, these Terms still apply in their entirety. Any matters
-          not covered by Indian law that are specific to your jurisdiction remain your
-          responsibility to communicate and agree upon in a project-specific addendum.
+          These Terms apply in their entirety regardless of your location. Any matters
+          specific to your jurisdiction remain your responsibility to communicate and agree
+          upon in a project-specific addendum.
         </p>
       </section>
 

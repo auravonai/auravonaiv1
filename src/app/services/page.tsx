@@ -3,16 +3,16 @@ import ServicesPageContent from "@/components/pages/ServicesPageContent";
 import { servicesData } from "@/lib/services-data";
 
 export const metadata: Metadata = {
-  title: "AI Development Services — Web Apps, SaaS, Mobile & Automation | Auravon AI",
+  title: "Hire an AI Development Agency — Web, SaaS, Mobile & AI Services | Auravon AI",
   description:
-    "Hire Auravon AI for custom AI development services: web apps, SaaS products, mobile apps, AI chatbot integration, automation systems, and internal tools. Startup-focused, production-grade engineering.",
+    "Auravon AI is an AI development agency offering custom web apps, SaaS products, mobile app development, AI chatbot services, business automation, and internal tools. Fixed-price. Startup-focused. Ships fast.",
   alternates: {
     canonical: "https://auravonai.com/services",
   },
   openGraph: {
-    title: "AI Development Services | Auravon AI",
+    title: "AI Development Services — Web, SaaS, Mobile & Automation | Auravon AI",
     description:
-      "Custom web apps, SaaS, mobile products, AI integrations, and automation — built by engineers who ship to production.",
+      "Hire Auravon AI for custom software development: web apps, SaaS, mobile, AI integrations, and automation — fixed-price, production-grade engineering for startups and businesses.",
     url: "https://auravonai.com/services",
   },
 };

@@ -14,27 +14,66 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://auravonai.com'),
   title: {
-    default: 'AI Development Company & Custom Software Studio | Auravon AI',
+    default: 'Auravon AI — AI Development Company & Custom Software Studio',
     template: '%s | Auravon AI',
   },
   description:
     'Auravon AI is an AI development company building custom software, SaaS products, web apps, mobile apps, and automation systems for startups and businesses. Ship faster with AI-first engineering.',
   keywords: [
+    // Brand
+    'Auravon AI',
+    'auravonai',
+    'auravon ai company',
+    // Core agency keywords
     'AI development company',
-    'custom AI software development',
+    'AI development agency',
+    'AI software agency',
+    'AI business agency',
+    'software development agency',
+    'software development studio',
+    'digital product studio',
+    'technology agency',
+    // Hire intent
     'hire AI developer',
+    'hire AI development company',
+    'hire software development agency',
+    'AI agency for startups',
+    'software agency for startups',
+    // Service keywords
+    'AI development services',
+    'custom AI software development',
     'AI integration services',
+    'AI chatbot development',
+    'AI automation services',
+    'LLM integration services',
+    'RAG chatbot development',
+    // Web & SaaS
     'web app development company',
     'SaaS development company',
-    'AI automation services',
-    'mobile app development',
-    'startup software development',
-    'AI chatbot development',
-    'custom software for startups',
+    'SaaS product development',
+    'custom web application development',
+    'Next.js development company',
     'build SaaS product',
     'AI-powered web applications',
-    'Next.js development agency',
-    'software development studio',
+    // Mobile
+    'mobile app development company',
+    'React Native development',
+    'Flutter app development',
+    // Startup focused
+    'startup software development',
+    'MVP development company',
+    'build MVP startup',
+    'custom software for startups',
+    'software development for startups',
+    // Business automation
+    'business automation services',
+    'workflow automation',
+    'business process automation',
+    // Custom software
+    'custom software development',
+    'internal tool development',
+    'custom dashboard development',
+    'enterprise software development',
   ],
   authors: [{ name: 'Auravon AI', url: 'https://auravonai.com' }],
   creator: 'Auravon AI',
@@ -55,15 +94,15 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://auravonai.com',
     siteName: 'Auravon AI',
-    title: 'Auravon AI — AI-Powered Software & Digital Product Studio',
+    title: 'Auravon AI — AI Development Company & Custom Software Studio',
     description:
-      'We build scalable websites, SaaS platforms, AI systems, mobile apps, and automation solutions engineered for growth.',
+      'Auravon AI builds custom software, AI systems, SaaS products, web apps, mobile apps, and automation for startups and businesses. Ship your idea in weeks, not months.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Auravon AI — Build the Future',
+        alt: 'Auravon AI — AI Development Company',
       },
     ],
   },
@@ -71,9 +110,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@auravonai',
     creator: '@auravonai',
-    title: 'Auravon AI — AI-Powered Software & Digital Product Studio',
+    title: 'Auravon AI — AI Development Company & Custom Software Studio',
     description:
-      'We build scalable websites, SaaS platforms, AI systems, mobile apps, and automation solutions engineered for growth.',
+      'Auravon AI builds custom software, AI systems, SaaS products, web apps, mobile apps, and automation for startups and businesses. Ship your idea in weeks, not months.',
     images: ['/og-image.png'],
   },
   alternates: {

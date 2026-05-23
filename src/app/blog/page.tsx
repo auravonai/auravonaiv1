@@ -3,16 +3,16 @@ import BlogPageContent from "@/components/pages/BlogPageContent";
 import { articles } from "@/lib/articles";
 
 export const metadata: Metadata = {
-  title: "Blog — Engineering & AI Insights from Auravon AI",
+  title: "AI Development Blog — SaaS, Startup Software & AI Guides | Auravon AI",
   description:
-    "Practical articles on AI architecture, Next.js performance, SaaS development, PostgreSQL, RAG systems, and startup engineering from the Auravon AI team.",
+    "In-depth guides on AI app development cost, SaaS architecture, MVP building, Next.js performance, RAG chatbots, business automation, and startup tech stack — written by the Auravon AI engineering team.",
   alternates: {
     canonical: "https://auravonai.com/blog",
   },
   openGraph: {
-    title: "Blog | Auravon AI",
+    title: "AI Development Blog — Startup Software & AI Guides | Auravon AI",
     description:
-      "Engineering and AI insights for founders and product teams. Real experience, practical code.",
+      "Practical guides on building AI apps, SaaS products, and MVPs. Real engineering insights from Auravon AI for founders and product teams.",
     url: "https://auravonai.com/blog",
   },
 };

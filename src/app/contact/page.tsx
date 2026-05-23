@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import ContactPageContent from "@/components/pages/ContactPageContent";
 
 export const metadata: Metadata = {
-  title: "Contact — Start Your Project with Auravon AI",
+  title: "Hire Auravon AI — Start Your AI, SaaS or Web App Project Today",
   description:
-    "Get in touch with Auravon AI. Book a free 30-minute strategy call, send a project brief, or reach us on WhatsApp. We respond within 24 hours.",
+    "Ready to build? Contact Auravon AI — an AI development agency for startups and businesses. Book a free 30-minute strategy call, send a project brief, or message us on WhatsApp. We respond within 24 hours.",
   alternates: {
     canonical: "https://auravonai.com/contact",
   },
   openGraph: {
-    title: "Contact | Auravon AI",
+    title: "Hire Auravon AI — Start Your Software Project",
     description:
-      "Start your web, mobile, or AI project with Auravon AI. Free strategy call · fast response · no commitment.",
+      "Contact Auravon AI to build your web app, AI system, SaaS product, or mobile app. Free strategy call · fixed pricing · ships fast.",
     url: "https://auravonai.com/contact",
   },
 };

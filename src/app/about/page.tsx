@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import AboutPageContent from "@/components/pages/AboutPageContent";
 
 export const metadata: Metadata = {
-  title: "About Auravon AI — AI Software Development Studio for Startups",
+  title: "About Auravon AI — AI Development Agency for Startups & Businesses",
   description:
-    "Auravon AI is an AI-first software development studio helping founders and product teams build web apps, SaaS platforms, mobile products, and AI-powered tools — properly, from day one.",
+    "Auravon AI is an AI development agency that helps startups and businesses build web apps, SaaS products, mobile apps, AI chatbots, and automation systems. No retainers. No overhead. Just engineering that ships.",
   alternates: {
     canonical: "https://auravonai.com/about",
   },
   openGraph: {
-    title: "About Auravon AI — AI Software Development Studio",
+    title: "About Auravon AI — AI Development Agency for Startups",
     description:
-      "We help startups and businesses build web apps, SaaS products, mobile apps, and AI-powered tools. Small team, production-grade engineering.",
+      "Auravon AI is a specialist AI software agency helping startups build web apps, SaaS products, mobile apps, and AI-powered tools. Small team, fast timelines, production-grade code.",
     url: "https://auravonai.com/about",
   },
 };

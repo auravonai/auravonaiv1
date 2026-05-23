@@ -94,7 +94,7 @@ export default function Hero() {
           >
             <span className="badge">
               <Sparkles className="w-3 h-3" />
-              AI-First Software Studio
+              Auravon AI — AI-First Software Studio
             </span>
           </motion.div>
 
@@ -118,8 +118,8 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="text-[#8888a8] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-9"
           >
-            We&apos;re a small engineering team that helps founders build web apps,
-            AI systems, and SaaS products — from idea to production.
+            Auravon AI is a small engineering team that helps founders build
+            web apps, AI systems, and SaaS products — from idea to production.
           </motion.p>
 
           {/* CTA Buttons */}

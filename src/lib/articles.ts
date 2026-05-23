@@ -24,6 +24,159 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "mvp-cost-agency-overcharging-2026",
+    title: "Your MVP Should Cost $8,000–$20,000. If Someone Quoted You More, Read This.",
+    excerpt:
+      "Agencies are quoting $50,000–$150,000 for products that should cost a fraction of that. Here's exactly why it happens, how to spot the red flags before you sign, and what a fair price actually looks like.",
+    category: "Startup Tech",
+    readTime: "9 min read",
+    date: "May 23, 2026",
+    featured: true,
+    tags: ["MVP", "Startup", "Agency", "Cost", "Founders"],
+    accent: "violet",
+    image: "https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=1200&q=80",
+    author: "Auravon AI",
+    authorRole: "Engineering Studio",
+    content: [
+      {
+        type: "paragraph",
+        text: "A founder came to us three months ago with a quote from a well-known agency: $85,000 and six months to build her MVP. She almost signed. Instead, she sent us a description of what she wanted to build. We shipped it in 19 days for $14,000. Same product. Same features. Same quality of code. What she paid for in that $85,000 quote was not engineering — it was overhead, sales commissions, project managers, and an incentive structure that rewards slow delivery.",
+      },
+      {
+        type: "paragraph",
+        text: "This isn't an isolated story. Across dozens of founders we've worked with and spoken to, the pattern is nearly identical: a large quote, a long timeline, and a vague explanation of why. If you're a founder trying to build your first product, this guide will give you the numbers you need to walk into any conversation with a developer or agency and know immediately whether you're being treated fairly.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "what-an-mvp-actually-is",
+        text: "What an MVP actually is (most founders build the wrong thing)",
+      },
+      {
+        type: "paragraph",
+        text: "The most expensive mistake in early-stage product development isn't picking the wrong developer. It's defining MVP incorrectly. An MVP — minimum viable product — is the smallest version of your product that proves your core value hypothesis with real users. It is not a beta version of your full product. It is not a 'lite' version of everything you've designed. It is one thing, done well enough to validate that people will pay for it.",
+      },
+      {
+        type: "list",
+        items: [
+          "What belongs in an MVP: The single feature that proves your core value. User auth (if required). One payment tier. One user role. The absolute minimum UI to make that feature usable.",
+          "What does NOT belong in an MVP: Admin panels. Multi-user roles. Advanced analytics dashboards. Multiple pricing tiers. Referral systems. Notification preferences. Integrations with every tool. Mobile app (if web works).",
+          "The test: If a feature's absence would prevent a user from experiencing your core value, it belongs. If a feature's absence would just be inconvenient, it doesn't.",
+          "The business case: Every feature not in your MVP costs you 2–4x more than adding it later, because it increases the complexity of everything built after it. Cut scope ruthlessly.",
+        ],
+      },
+      {
+        type: "note",
+        text: "The most common reason an agency quotes $85,000 for an MVP is that the founder described what they wanted in six months, not what they need in six weeks. If you're building your first product, your natural instinct is to describe the complete vision. Agencies quote the complete vision. Ask specifically for the smallest thing that validates the core value — then compare quotes.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "what-a-real-mvp-costs-in-2026",
+        text: "What a real MVP should cost in 2026",
+      },
+      {
+        type: "paragraph",
+        text: "These are honest ranges based on real projects — not benchmarks from a pricing page. They assume a small, capable team (2–3 people) who specialize in the relevant stack. Larger agencies charge 30–60% more for the same work because of overhead.",
+      },
+      {
+        type: "list",
+        items: [
+          "Landing page + waitlist: $1,500–$4,000. Two weeks. Anyone quoting more for this is padding scope.",
+          "Simple SaaS MVP (one core feature, auth, Stripe billing, basic dashboard): $8,000–$18,000. Four to eight weeks.",
+          "AI-powered SaaS MVP (LLM integration as a core feature, auth, billing): $12,000–$25,000. Six to ten weeks.",
+          "Marketplace MVP (two-sided, both user types, basic transactions): $15,000–$30,000. Eight to twelve weeks.",
+          "Mobile app MVP (iOS + Android, one core feature, basic backend): $12,000–$22,000. Six to ten weeks.",
+          "Internal tool / automation system: $5,000–$15,000. Two to six weeks.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "If you received a quote significantly above these ranges, you were either quoted a full product (not an MVP), or the team has structural overhead that has nothing to do with the value they're delivering to you.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "why-agencies-quote-50k-150k",
+        text: "Why agencies quote $50,000–$150,000 for the same thing",
+      },
+      {
+        type: "paragraph",
+        text: "This isn't usually malice — it's incentive structure. Agencies are businesses. Their costs are real: rent, salaries, account managers, project managers, sales teams, and a layer of coordination overhead that grows as the company grows. They need to cover those costs with every project. A $14,000 project doesn't pay the rent at an office with fifteen employees.",
+      },
+      {
+        type: "list",
+        items: [
+          "Sales commission: Most agencies pay 10–15% commission on new business. On an $85,000 project, that's $8,500–$12,750 that goes to the person who sold you the project, not the people building it.",
+          "Project management overhead: Agencies typically allocate 20–30% of project time to project management, status meetings, and coordination. You're paying for this whether it creates value for you or not.",
+          "Padding for scope creep: Experienced agencies know projects expand. They quote high because they know you'll ask for changes. If you don't, the margin stays with them.",
+          "Hourly billing at blended rates: Agency billing is often based on a blended hourly rate of $100–$200/hour. A developer working 200 hours at $150/hour is $30,000 — before PM overhead, revisions, or the account manager's time.",
+          "Unnecessary complexity: Adding microservices, custom authentication, or enterprise-grade infrastructure to a 200-user product is engineering theater. It inflates the quote and the timeline without adding value.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "red-flags-in-agency-proposals",
+        text: "Red flags in agency proposals that cost founders thousands",
+      },
+      {
+        type: "paragraph",
+        text: "Before you sign anything, run through this checklist. Any one of these is a reason to ask hard questions. Multiple of them is a reason to walk away.",
+      },
+      {
+        type: "list",
+        items: [
+          "No fixed-price option. Time-and-materials contracts transfer all risk to you. You have no cost ceiling. The agency has no incentive to work efficiently.",
+          "Vague deliverables. If the proposal doesn't list exactly what you're getting — specific pages, features, API endpoints, integrations — you're signing a blank check.",
+          "'Discovery phase' before any real work. A two-to-four-week paid discovery phase at $5,000–$10,000 is often just a way to extract money while they figure out what to build. A team that specializes in your type of product shouldn't need weeks to scope it.",
+          "No examples of shipped products. Demos and staging environments are not production apps. Ask for live URLs with real users before trusting any capability claim.",
+          "Timeline longer than 12 weeks for an MVP. An MVP that takes more than three months isn't an MVP. It's scope that wasn't cut aggressively enough — and you'll pay for all of it.",
+          "Minimum retainer requirements. Some agencies require a minimum three-month engagement to 'get started.' This locks you into a contract before you've seen a single line of production code.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "how-to-get-a-fair-quote",
+        text: "How to get a fair quote for your product",
+      },
+      {
+        type: "paragraph",
+        text: "Getting a fair quote is mostly about how you frame the conversation. Most founders describe their full product vision. Agencies quote the full product vision. Here's how to change that:",
+      },
+      {
+        type: "list",
+        items: [
+          "Define the MVP before the conversation. Before talking to any developer or agency, write down: (1) the single core feature, (2) the user types required, (3) the payment model, and (4) what success looks like in six weeks. Then ask for a quote on exactly that.",
+          "Ask for a fixed price with a defined scope. If they won't do fixed price, ask why. The honest answer is that they don't know how long it will take — which means you need a tighter spec, not a bigger budget.",
+          "Ask who writes the code. Many agencies use junior developers or offshore contractors for the actual development while selling you on senior talent. Ask directly who will be writing your product and what they've shipped.",
+          "Request references with contact information. Not testimonials on their website. Actual founders you can call. Ask those founders: was it on time, on budget, and did the product actually ship?",
+          "Get at least three quotes. The range tells you more than any single number. If one quote is $12,000 and another is $85,000 for the same spec, you now know exactly where the premium is.",
+        ],
+      },
+      {
+        type: "quote",
+        text: "The most expensive product you can build is one that took six months, cost $80,000, and never found a paying user. The cheapest product you can build is the one that ships in three weeks and tells you whether you're right before you spend more.",
+        source: "Auravon AI",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "what-fair-looks-like",
+        text: "What working with a fair-priced team looks like",
+      },
+      {
+        type: "paragraph",
+        text: "A team that prices fairly will do all of the following: quote you a fixed price before any work begins, show you a timeline with specific milestones and deliverables, let you speak directly to the engineers, give you code and infrastructure ownership from day one, and not charge you for meetings that don't produce output.",
+      },
+      {
+        type: "paragraph",
+        text: "We build MVPs, AI products, automation systems, and custom software for early-stage founders. Our projects are fixed-price, scoped before we start, and typically ship in three to six weeks. If you have a quote from another team that seems high, we'll tell you honestly whether it's fair — and if it isn't, we'll tell you what it should cost. No sales call required. Just tell us what you're building.",
+      },
+    ],
+  },
+  {
     slug: "ai-app-development-cost-guide",
     title: "How Much Does It Cost to Build an AI-Powered App in 2026?",
     excerpt:

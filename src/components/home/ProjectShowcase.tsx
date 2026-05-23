@@ -2,7 +2,26 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  BarChart3,
+  Brain,
+  Users,
+  Database,
+  TrendingUp,
+  PieChart,
+  MessageSquare,
+  Bot,
+  Sparkles,
+  ShoppingCart,
+  Zap,
+  CreditCard,
+  ClipboardList,
+  CalendarDays,
+  UtensilsCrossed,
+  Smartphone,
+  MapPin,
+} from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
 const projects = [
@@ -15,6 +34,7 @@ const projects = [
     accentText: "text-violet-400",
     accentBg: "bg-violet-500/10",
     accentBorder: "border-violet-500/20",
+    icons: [BarChart3, Brain, Users] as const,
   },
   {
     title: "SaaS Analytics Platform",
@@ -25,6 +45,7 @@ const projects = [
     accentText: "text-blue-400",
     accentBg: "bg-blue-500/10",
     accentBorder: "border-blue-500/20",
+    icons: [Database, TrendingUp, PieChart] as const,
   },
   {
     title: "AI Support Assistant",
@@ -35,6 +56,7 @@ const projects = [
     accentText: "text-cyan-400",
     accentBg: "bg-cyan-500/10",
     accentBorder: "border-cyan-500/20",
+    icons: [MessageSquare, Bot, Sparkles] as const,
   },
   {
     title: "E-Commerce Rebuild",
@@ -45,6 +67,7 @@ const projects = [
     accentText: "text-emerald-400",
     accentBg: "bg-emerald-500/10",
     accentBorder: "border-emerald-500/20",
+    icons: [ShoppingCart, Zap, CreditCard] as const,
   },
   {
     title: "HR Management System",
@@ -55,6 +78,7 @@ const projects = [
     accentText: "text-orange-400",
     accentBg: "bg-orange-500/10",
     accentBorder: "border-orange-500/20",
+    icons: [Users, ClipboardList, CalendarDays] as const,
   },
   {
     title: "Food Delivery App",
@@ -65,6 +89,7 @@ const projects = [
     accentText: "text-pink-400",
     accentBg: "bg-pink-500/10",
     accentBorder: "border-pink-500/20",
+    icons: [UtensilsCrossed, Smartphone, MapPin] as const,
   },
 ];
 
@@ -85,7 +110,9 @@ export default function ProjectShowcase() {
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map(({ title, category, description, outcome, tags, accentText, accentBg, accentBorder }, i) => (
+          {projects.map(({ title, category, description, outcome, tags, accentText, accentBg, accentBorder, icons }, i) => {
+            const [IconLeft, IconCenter, IconRight] = icons;
+            return (
             <motion.article
               key={title}
               initial={{ opacity: 0, y: 24 }}
@@ -101,11 +128,15 @@ export default function ProjectShowcase() {
                 </span>
               </div>
 
-              {/* Visual placeholder */}
-              <div className={`w-full h-28 rounded-xl ${accentBg} border ${accentBorder} mb-5 flex items-center justify-center`}>
-                <span className={`text-4xl font-black opacity-20 ${accentText}`}>
-                  {title.charAt(0)}
-                </span>
+              {/* Visual — icon composition */}
+              <div
+                className={`w-full h-28 rounded-xl ${accentBg} border ${accentBorder} mb-5 flex items-center justify-center gap-5`}
+                role="img"
+                aria-label={`${title} — ${category} project`}
+              >
+                <IconLeft className={`w-6 h-6 ${accentText} opacity-35`} />
+                <IconCenter className={`w-10 h-10 ${accentText} opacity-75`} />
+                <IconRight className={`w-6 h-6 ${accentText} opacity-35`} />
               </div>
 
               <h3 className="text-[15px] font-semibold text-white mb-2">{title}</h3>
@@ -135,7 +166,8 @@ export default function ProjectShowcase() {
                 </Link>
               </div>
             </motion.article>
-          ))}
+          );
+          })}
         </div>
 
         <AnimatedSection delay={0.2} className="text-center mt-14">

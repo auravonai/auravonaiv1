@@ -21,6 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "ai-agents-for-business-2026",
     "build-ai-chatbot-business-2026",
     "n8n-vs-zapier-make-automation-2026",
+    "ai-automations-roi-business-2026",
+    "mvp-cost-agency-overcharging-2026",
     "ai-app-development-cost-guide",
     "vibe-coding-ai-development-2025",
     "building-ai-powered-saas-2025",

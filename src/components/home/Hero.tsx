@@ -2,58 +2,55 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles, CheckCircle2, TrendingUp, ShoppingCart, Search, Share2 } from "lucide-react";
 
 const pillars = [
-  { value: "Ship fast", label: "startup velocity" },
-  { value: "AI-native", label: "by design" },
-  { value: "Clean code", label: "you can own" },
+  { value: "7", label: "Service Categories" },
+  { value: "34+", label: "Specialist Services" },
+  { value: "Global", label: "Client Base" },
 ];
 
-const codeLines = [
+const resultCards = [
   {
-    tokens: [
-      { t: "const", c: "text-violet-400" }, { t: " app ", c: "text-[#f2f2ff]" },
-      { t: "=", c: "text-[#8888a8]" }, { t: " await ", c: "text-violet-400" },
-      { t: "auravon", c: "text-sky-400" }, { t: ".build({", c: "text-[#f2f2ff]" },
-    ],
+    icon: Search,
+    service: "SEO",
+    metric: "+342%",
+    label: "Organic Traffic",
+    color: "text-violet-400",
+    bg: "bg-violet-500/10",
+    border: "border-violet-500/20",
+    glow: "rgba(139,92,246,0.12)",
   },
   {
-    tokens: [
-      { t: "  type", c: "text-blue-300" }, { t: ": ", c: "text-[#8888a8]" },
-      { t: "'saas-platform'", c: "text-emerald-300" }, { t: ",", c: "text-[#8888a8]" },
-    ],
+    icon: TrendingUp,
+    service: "Google Ads",
+    metric: "3.8x",
+    label: "Return on Ad Spend",
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20",
+    glow: "rgba(59,130,246,0.12)",
   },
   {
-    tokens: [
-      { t: "  stack", c: "text-blue-300" }, { t: ": ", c: "text-[#8888a8]" },
-      { t: "['Next.js',", c: "text-emerald-300" }, { t: " 'AI',", c: "text-emerald-300" },
-      { t: " 'PostgreSQL']", c: "text-emerald-300" }, { t: ",", c: "text-[#8888a8]" },
-    ],
+    icon: ShoppingCart,
+    service: "Ecommerce",
+    metric: "+280%",
+    label: "Online Revenue",
+    color: "text-emerald-400",
+    bg: "bg-emerald-500/10",
+    border: "border-emerald-500/20",
+    glow: "rgba(16,185,129,0.12)",
   },
   {
-    tokens: [
-      { t: "  ai", c: "text-blue-300" }, { t: ": ", c: "text-[#8888a8]" },
-      { t: "true", c: "text-orange-300" }, { t: ",", c: "text-[#8888a8]" },
-    ],
+    icon: Share2,
+    service: "Social Media",
+    metric: "22K+",
+    label: "Followers Grown",
+    color: "text-pink-400",
+    bg: "bg-pink-500/10",
+    border: "border-pink-500/20",
+    glow: "rgba(236,72,153,0.12)",
   },
-  {
-    tokens: [
-      { t: "  deploy", c: "text-blue-300" }, { t: ": ", c: "text-[#8888a8]" },
-      { t: "'production'", c: "text-emerald-300" },
-    ],
-  },
-  { tokens: [{ t: "});", c: "text-[#f2f2ff]" }] },
-  { tokens: [] },
-  { tokens: [{ t: "// ✓ Production-ready · type-safe", c: "text-[#48486a]" }] },
-  { tokens: [{ t: "// ✓ AI-integrated · clean architecture", c: "text-[#48486a]" }] },
-  { tokens: [{ t: "// ✓ Fully documented · yours to maintain", c: "text-[#48486a]" }] },
-];
-
-const buildMetrics = [
-  { label: "Build", value: "Passing", color: "text-violet-400" },
-  { label: "TypeScript", value: "Strict", color: "text-sky-400" },
-  { label: "Deploy", value: "Ready", color: "text-emerald-400" },
 ];
 
 export default function Hero() {
@@ -94,7 +91,7 @@ export default function Hero() {
           >
             <span className="badge">
               <Sparkles className="w-3 h-3" />
-              Auravon AI — AI-First Software Studio
+              Auravon AI — Full-Service Digital Agency
             </span>
           </motion.div>
 
@@ -105,10 +102,10 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.07 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-7"
           >
-            We Build Software
+            Grow Your Business
             <br className="hidden sm:block" />
-            {" "}That{" "}
-            <span className="gradient-text">Actually Ships</span>
+            {" "}Online{" "}
+            <span className="gradient-text">Faster</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -118,8 +115,9 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="text-[#8888a8] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-9"
           >
-            Auravon AI is a small engineering team that helps founders build
-            web apps, AI systems, and SaaS products — from idea to production.
+            SEO, Google Ads, Meta Ads, website development, ecommerce, social media,
+            content marketing, and brand design — every digital service your business
+            needs to grow, under one roof.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -130,11 +128,11 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-11"
           >
             <Link href="/contact" className="btn-primary !py-3.5 !px-7 text-[15px]">
-              Discuss Your Project
+              Get Free Consultation
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/projects" className="btn-secondary !py-3.5 !px-7 text-[15px]">
-              See Our Work
+            <Link href="/services" className="btn-secondary !py-3.5 !px-7 text-[15px]">
+              Explore Services
             </Link>
           </motion.div>
 
@@ -163,7 +161,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* ── Code mockup ── */}
+        {/* ── Results cards mockup ── */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -186,39 +184,60 @@ export default function Hero() {
                   </div>
                   <div className="flex-1 flex justify-center">
                     <span className="text-[11px] text-[#48486a] font-mono">
-                      auravon-build.ts
+                      campaign-results.dashboard
                     </span>
                   </div>
                   <div className="w-[52px]" />
                 </div>
 
-                {/* Code */}
-                <div className="px-6 py-5 font-mono text-[12.5px] leading-[1.9]">
-                  {codeLines.map((line, i) => (
-                    <div key={i}>
-                      {line.tokens.length === 0 ? (
-                        <span>&nbsp;</span>
-                      ) : (
-                        line.tokens.map((tok, j) => (
-                          <span key={j} className={tok.c}>{tok.t}</span>
-                        ))
-                      )}
-                    </div>
-                  ))}
+                {/* Results grid */}
+                <div className="p-5 grid grid-cols-2 gap-3">
+                  {resultCards.map((card) => {
+                    const Icon = card.icon;
+                    return (
+                      <div
+                        key={card.service}
+                        className={`rounded-xl p-4 border ${card.border} ${card.bg} relative overflow-hidden`}
+                        style={{
+                          background: `radial-gradient(ellipse 80% 80% at 0% 0%, ${card.glow}, transparent 60%)`,
+                        }}
+                      >
+                        <div className="flex items-center gap-2 mb-3">
+                          <div className={`w-6 h-6 rounded-md flex items-center justify-center ${card.bg} border ${card.border}`}>
+                            <Icon className={`w-3 h-3 ${card.color}`} />
+                          </div>
+                          <span className="text-[11px] font-medium text-[#8888a8]">
+                            {card.service}
+                          </span>
+                        </div>
+                        <div className={`text-2xl font-bold mb-0.5 ${card.color}`}>
+                          {card.metric}
+                        </div>
+                        <div className="text-[11px] text-[#48486a]">
+                          {card.label}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
 
-                {/* Build status footer */}
+                {/* Footer */}
                 <div className="border-t border-white/[0.06] px-5 py-3 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[11px] text-[#48486a] font-medium">Build successful</span>
+                    <span className="text-[11px] text-[#48486a] font-medium">
+                      Live client results
+                    </span>
                   </div>
                   <div className="hidden sm:flex items-center gap-5">
-                    {buildMetrics.map(({ label, value, color }) => (
+                    {[
+                      { label: "No Lock-in", color: "text-violet-400" },
+                      { label: "Free Audit", color: "text-sky-400" },
+                      { label: "Global Clients", color: "text-emerald-400" },
+                    ].map(({ label, color }) => (
                       <div key={label} className="flex items-center gap-1.5">
                         <CheckCircle2 className={`w-3 h-3 ${color}`} />
-                        <span className="text-[11px] text-[#48486a]">{label}</span>
-                        <span className={`text-[11px] font-semibold ${color}`}>{value}</span>
+                        <span className={`text-[11px] font-semibold ${color}`}>{label}</span>
                       </div>
                     ))}
                   </div>

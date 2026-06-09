@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
+import WhatsAppFloat from '@/components/layout/WhatsAppFloat';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
@@ -229,6 +230,7 @@ export default function RootLayout({
         <Navbar />
         <main className="w-full min-w-0">{children}</main>
         <Footer />
+        <WhatsAppFloat />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-10N63FS2SB"
           strategy="afterInteractive"

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Mail, MessageCircle, Clock, ArrowRight, Send, CheckCircle2,
+  Mail, MessageCircle, Clock, ArrowRight, CheckCircle2,
   MapPin, Calendar, Globe, ChevronDown,
 } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -52,13 +52,29 @@ const contactCards = [
 ];
 
 const projectTypes = [
-  "Website Development", "Mobile App Development", "AI Solutions",
-  "SaaS Product", "Custom Software", "UI/UX Design", "Automation", "Other",
+  "SEO / Search Engine Optimisation",
+  "Google Ads / PPC",
+  "Meta Ads (Facebook & Instagram)",
+  "Website Development",
+  "Ecommerce Development (Shopify / WooCommerce)",
+  "Amazon / Flipkart / Meesho Account Management",
+  "Social Media Management",
+  "Content Marketing / SEO Blog Writing",
+  "Graphic Design & Branding",
+  "Logo Design",
+  "Business Strategy / Consulting",
+  "Digital Growth Planning",
+  "Multiple Services",
+  "Other / Not Sure Yet",
 ];
 
 const budgetRanges = [
-  "Under ₹50,000", "₹50,000 – ₹2,00,000", "₹2,00,000 – ₹5,00,000",
-  "₹5,00,000 – ₹10,00,000", "₹10,00,000+", "Let's discuss",
+  "Under ₹25,000",
+  "₹25,000 – ₹75,000",
+  "₹75,000 – ₹2,00,000",
+  "₹2,00,000 – ₹5,00,000",
+  "₹5,00,000+",
+  "Let's discuss",
 ];
 
 const inputClass =
@@ -80,12 +96,34 @@ export default function ContactPageContent() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+
+    const parts = [
+      "Hi Auravon AI! I'd like to discuss a project.",
+      "",
+      `*Name:* ${formData.name}`,
+      `*Email:* ${formData.email}`,
+      formData.phone    ? `*Phone:* ${formData.phone}`            : "",
+      formData.company  ? `*Company:* ${formData.company}`        : "",
+      formData.projectType ? `*Service Needed:* ${formData.projectType}` : "",
+      formData.budget   ? `*Budget:* ${formData.budget}`          : "",
+      formData.timeline ? `*Timeline:* ${formData.timeline}`      : "",
+      "",
+      "*Details:*",
+      formData.message,
+    ].filter(Boolean);
+
+    const waUrl =
+      "https://wa.me/918814012395?text=" +
+      encodeURIComponent(parts.join("\n"));
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+    }, 600);
   };
 
   return (
@@ -202,7 +240,7 @@ export default function ContactPageContent() {
                   Send Us a Project Brief
                 </h2>
                 <p className="text-[13px] text-[#8888a8] mb-7">
-                  We&apos;ll get back to you within 24 hours with a proposal.
+                  Fill in your details and we&apos;ll open WhatsApp with everything pre-filled — just hit send.
                 </p>
 
                 {isSubmitted ? (
@@ -218,9 +256,9 @@ export default function ContactPageContent() {
                         <CheckCircle2 className="w-8 h-8 text-emerald-400" />
                       </div>
                     </div>
-                    <h3 className="text-[20px] font-bold text-white mb-2">Message Sent!</h3>
+                    <h3 className="text-[20px] font-bold text-white mb-2">WhatsApp Opened!</h3>
                     <p className="text-[14px] text-[#8888a8] max-w-sm leading-relaxed">
-                      We&apos;ll review your project brief and get back to you within 24 hours.
+                      Your details have been pre-filled in WhatsApp. Just hit <strong className="text-white">Send</strong> to reach us — we typically reply within 1 hour.
                     </p>
                   </motion.div>
                 ) : (
@@ -333,22 +371,22 @@ export default function ContactPageContent() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="w-full justify-center flex items-center gap-2 py-3.5 px-7 rounded-xl bg-emerald-500 hover:bg-emerald-400 active:scale-[0.98] text-white font-semibold text-[15px] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed shadow-[0_4px_24px_rgba(16,185,129,0.3)]"
                       >
                         {isSubmitting ? (
                           <>
                             <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                            Sending...
+                            Opening WhatsApp...
                           </>
                         ) : (
                           <>
-                            <Send className="w-4 h-4" />
-                            Send Project Brief
+                            <MessageCircle className="w-4 h-4" />
+                            Send via WhatsApp
                           </>
                         )}
                       </button>
                       <p className="text-center text-[11px] text-[#48486a]">
-                        We usually respond within 24 hours · No commitment required
+                        Opens WhatsApp with your message pre-filled · No commitment required
                       </p>
                     </div>
                   </form>

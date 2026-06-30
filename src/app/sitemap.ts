@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const blogPosts: MetadataRoute.Sitemap = [
+    "google-ai-overviews-seo-recovery-2026",
     "ai-agents-for-business-2026",
     "build-ai-chatbot-business-2026",
     "n8n-vs-zapier-make-automation-2026",

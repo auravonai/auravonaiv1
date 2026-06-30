@@ -24,6 +24,284 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "google-ai-overviews-seo-recovery-2026",
+    title: "Your SEO Traffic Dropped and You Didn't Change a Thing. Here's Why — and the Fix.",
+    excerpt:
+      "Google AI Overviews now appear on 52% of all searches and answer the question before anyone clicks. If your organic traffic fell 20–60% in the last year and your rankings didn't change, this is why — and here's exactly what to do about it.",
+    category: "SEO & Digital Marketing",
+    readTime: "13 min read",
+    date: "June 27, 2026",
+    featured: true,
+    tags: ["SEO 2026", "Google AI Overviews", "GEO", "Organic Traffic", "Answer Engine Optimization"],
+    accent: "emerald",
+    image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=1200&q=80",
+    author: "Auravon AI",
+    authorRole: "Digital Marketing Studio",
+    content: [
+      {
+        type: "paragraph",
+        text: "A business owner checked their Google Search Console in January and saw what dozens of our clients saw last year: organic traffic down 38% year-over-year. Rankings unchanged. No penalties. No algorithm updates that specifically targeted their site. The content was the same. The backlinks were the same. And yet the clicks had simply stopped arriving.",
+      },
+      {
+        type: "paragraph",
+        text: "This is not an SEO failure. It is a structural shift in how Google serves information — one that began accelerating in late 2024 and reached critical mass in 2025. Google AI Overviews (formerly Search Generative Experience) now generate an answer directly on the search results page for over half of all queries. Users read the answer. They do not click. Your ranking stayed exactly where it was. The traffic went to zero because the user never needed to visit your site.",
+      },
+      {
+        type: "paragraph",
+        text: "This guide explains exactly what changed, who got hit hardest, and — most importantly — the specific content and technical strategies that are working right now to recover traffic and earn citations inside AI Overviews themselves.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "what-google-ai-overviews-actually-did",
+        text: "What Google AI Overviews actually did to organic search",
+      },
+      {
+        type: "paragraph",
+        text: "Google AI Overviews are AI-generated summaries that appear at the top of search results — above the organic blue links, above ads, above featured snippets. They pull information from multiple websites, synthesize an answer, and present it with inline citations to the sources used. The user gets their answer in 10 seconds without clicking anything.",
+      },
+      {
+        type: "list",
+        items: [
+          "Coverage: As of Q2 2026, AI Overviews appear on approximately 52% of desktop searches and 61% of mobile searches, up from 15% in early 2024. Informational queries, comparison queries, and 'how to' queries are the most affected categories.",
+          "Click-through rate impact: Studies across multiple verticals show organic CTR dropped 34–58% for position 1–3 rankings on queries where AI Overviews appear. Position 4–10 lost even more — 60–72% CTR reduction.",
+          "Zero-click searches: Zero-click search (where the user gets their answer on the results page and leaves without clicking) now accounts for 68% of all Google searches in 2026, up from 49% in 2022.",
+          "Who gets cited in AI Overviews: Google's AI synthesizes answers from 3–8 sources per query. Being cited in an AI Overview drives significantly more visibility than a traditional #3 ranking — but the criteria for selection are different from traditional ranking factors.",
+        ],
+      },
+      {
+        type: "note",
+        text: "The websites losing the most traffic are not low-quality sites. They are often authoritative, well-ranked sites whose content answers questions — exactly the content AI Overviews are designed to extract and present. High-quality informational content is, paradoxically, the most exposed category.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "who-got-hit-hardest",
+        text: "Which industries and content types lost the most traffic",
+      },
+      {
+        type: "paragraph",
+        text: "Not every website lost traffic at the same rate. The severity depends heavily on what kind of content you publish and what intent your users have when they find you. Here is the breakdown by category:",
+      },
+      {
+        type: "list",
+        items: [
+          "Hardest hit — informational content (how-to guides, explainers, definitions, comparisons): Traffic down 40–70%. This is the exact content AI Overviews are designed to answer. If your site was built on answering questions, your traffic took a direct hit.",
+          "Heavily hit — local service businesses without strong local SEO: Businesses relying on 'plumber near me' or 'best SEO agency in [city]' queries have seen AI Overviews surface AI-generated business lists before the Map Pack, compressing organic click opportunity further.",
+          "Moderately hit — e-commerce product pages: Product queries with transactional intent still drive clicks because AI Overviews cannot replace the purchase experience. Category and comparison pages are more exposed than individual product pages.",
+          "Minimally hit — branded searches, navigational queries, and transactional bottom-of-funnel content: 'Login to [product]', '[brand name] pricing', '[competitor] vs [you]' queries are mostly unaffected. Users with a destination in mind still click.",
+          "Growing opportunity — news, original research, and proprietary data: AI Overviews consistently cite primary sources for recent data. If you publish original research, surveys, or proprietary industry data, citation likelihood is high.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "geo-generative-engine-optimization",
+        text: "GEO: Generative Engine Optimization — the new discipline you need",
+      },
+      {
+        type: "paragraph",
+        text: "GEO (Generative Engine Optimization) is the emerging practice of optimizing your content not just to rank in traditional search results, but to be selected, cited, and quoted by AI-generated answers — in Google AI Overviews, Bing Copilot, ChatGPT Browse, and Perplexity. It is the most important new SEO skill of 2026.",
+      },
+      {
+        type: "paragraph",
+        text: "Traditional SEO optimizes for ranking signals: backlinks, keyword density, page authority, technical crawlability. GEO optimizes for trust signals that AI systems use to select sources: clarity of claims, factual specificity, source authority, and structural parsability. These overlap significantly with good writing — but the weighting is different.",
+      },
+      {
+        type: "list",
+        items: [
+          "GEO signal #1 — Definitive, citable claims: AI systems extract specific, quotable statements. 'Email open rates average 19.7% across all industries (2026 benchmark)' is citable. 'Email marketing works well for most businesses' is not. The more specific and factual your claims, the higher your citation probability.",
+          "GEO signal #2 — Structured content that parses cleanly: AI Overviews prefer content with clear H2/H3 hierarchy, numbered lists for processes, and definitions presented in a consistent format. Pages where the answer to a question can be isolated in a single paragraph or list item are extracted more reliably.",
+          "GEO signal #3 — Demonstrated expertise and original data: AI systems prioritize sources that demonstrate first-hand knowledge — case studies, original research, direct experience, and unique data. A post that says 'based on 47 projects we ran in 2025' signals a type of authority that a synthesized overview cannot match.",
+          "GEO signal #4 — Entity clarity (who you are and what you know): Make it unambiguous who writes your content, what their credentials are, and what your organization's domain of expertise is. Google's AI uses entity recognition to assess source credibility — E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) has moved from a guideline to a direct ranking and citation factor.",
+          "GEO signal #5 — Freshness signals for time-sensitive queries: AI Overviews show a publication or last-updated date prominently. For queries where recency matters ('best AI tools 2026', 'current mortgage rates'), freshness is a primary citation filter. Stale content — even excellent content — gets excluded.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "five-seo-rules-2026",
+        text: "The 5 new SEO rules that actually work in 2026",
+      },
+      {
+        type: "paragraph",
+        text: "The fundamentals of SEO — quality content, authoritative backlinks, fast pages, good user experience — still matter. But the tactics that produce the highest ROI in 2026 are different from what worked in 2022. Here are the five shifts that are producing measurable results right now:",
+      },
+      {
+        type: "heading",
+        level: 3,
+        id: "rule-1-bottom-of-funnel-first",
+        text: "Rule 1: Prioritize bottom-of-funnel content over top-of-funnel",
+      },
+      {
+        type: "paragraph",
+        text: "Top-of-funnel informational content ('what is X', 'how does X work', 'X vs Y') is the most exposed to AI Overviews. Bottom-of-funnel content — pricing pages, case studies, comparison landing pages, service-specific landing pages — is the least exposed and highest converting. If you have been investing heavily in informational blog posts for traffic, shift your investment toward content that sits closer to the buying decision. This content captures users in sessions where intent to act is highest, and AI Overviews rarely answer 'should I hire [specific company] for SEO' queries.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        id: "rule-2-answer-engine-optimization",
+        text: "Rule 2: Structure content to be extracted, not just read",
+      },
+      {
+        type: "paragraph",
+        text: "Answer Engine Optimization (AEO) is the tactical implementation of GEO for content writers. The principle: structure every piece of content so that an AI (or a human skimming) can extract the specific answer to a specific question from a specific section without reading the whole piece. This means starting every H2 section with the most important sentence first (inverted pyramid), using tables for comparisons, using numbered lists for processes, and writing definitions as one-sentence summaries followed by elaboration.",
+      },
+      {
+        type: "list",
+        items: [
+          "Add an FAQ section to every long-form article. These map directly to conversational queries that trigger AI Overviews, and FAQ schema markup increases the probability of being cited.",
+          "Use clear, question-form H2 headers. 'How much does SEO cost in 2026?' is extractable. 'Pricing information' is not.",
+          "Write a TL;DR summary at the top of every article. AI systems and users both extract this immediately. If your summary is cited, your site is credited.",
+          "Keep key definitions and claims in their own paragraph, not buried in a block of text. AI extraction favors isolated, complete statements.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 3,
+        id: "rule-3-original-research",
+        text: "Rule 3: Publish original data that AI systems cannot generate themselves",
+      },
+      {
+        type: "paragraph",
+        text: "The most durable content investment you can make in 2026 is original research. AI systems cannot generate proprietary data — they can only cite it. If you survey your customers, publish benchmark data from your client work, analyze trends from your own platform, or compile original case studies, you create content that AI Overviews must cite to be accurate. This is the highest-probability path to earning consistent AI citations across the long tail of related queries.",
+      },
+      {
+        type: "paragraph",
+        text: "This does not require a research department. A survey of 50 customers produces citable data. A compilation of results across 20 client projects produces citable benchmarks. An analysis of your own platform's usage patterns produces data no one else has. The bar is lower than it sounds — it just requires publishing numbers with a source, not just opinions.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        id: "rule-4-brand-search-moat",
+        text: "Rule 4: Build a brand search moat that AI cannot disrupt",
+      },
+      {
+        type: "paragraph",
+        text: "Branded search — people searching for your company, your product, or your specific approach by name — is almost entirely immune to AI Overview disruption. No AI Overview answers 'Auravon AI pricing' by citing a competitor. The strategic implication: invest in building brand recall so that people search for you specifically, not just for the problem you solve. This means consistent content on platforms beyond Google (LinkedIn, YouTube, newsletters, podcasts), media mentions that establish brand recognition, and a distinctive positioning that makes your name synonymous with a specific outcome.",
+      },
+      {
+        type: "heading",
+        level: 3,
+        id: "rule-5-local-seo-reinforcement",
+        text: "Rule 5: Double down on local SEO and Google Business Profile",
+      },
+      {
+        type: "paragraph",
+        text: "For local service businesses, the Map Pack remains largely unaffected by AI Overviews — and is now relatively more valuable as organic clicks decline. Google Business Profile optimization, review generation, and local citation building are producing better ROI than informational content for businesses with a geographic service area. A fully optimized GBP with 80+ recent reviews, current photos, accurate service descriptions, and weekly posts consistently outperforms a competitor with better content but a neglected profile.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "technical-seo-still-matters",
+        text: "The technical SEO factors that still move the needle",
+      },
+      {
+        type: "paragraph",
+        text: "The relationship between technical SEO and AI citation is direct: if Googlebot cannot efficiently crawl and parse your content, Google's AI cannot cite it. These technical factors now serve two purposes — they support traditional rankings and they enable AI extraction.",
+      },
+      {
+        type: "list",
+        items: [
+          "Core Web Vitals: Google AI Overviews preferentially cite pages that load quickly and have stable layouts. LCP under 2.5 seconds, CLS under 0.1, INP under 200ms are still the thresholds that matter. A slow site may rank but will be deprioritized as a citation source.",
+          "Schema markup: FAQ schema, HowTo schema, Article schema, and Organization schema all provide direct structured signals to Google's AI. These are not optional extras — they are citation enablers. Every article page should have Article schema with Author, datePublished, and dateModified populated.",
+          "Internal linking and topic clusters: Google's understanding of your site's topical authority has become more important, not less. A site with 30 well-interlinked articles about SEO signals deeper expertise than a site with one article. Cluster your content around core topics with clear parent-child linking structure.",
+          "Crawl budget and page quality: With AI Overviews prioritizing quality sources, having 200 thin or low-value pages on your domain actively hurts your citation probability on your better pages. Audit, consolidate, or remove content that adds no value. Quality distribution across a domain matters.",
+          "HTTPS, structured data, and canonical tags: Basic technical hygiene — still required. An uncrawlable or improperly canonicalized page will not be cited regardless of content quality.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "quick-seo-audit-2026",
+        text: "The 7-question SEO audit for 2026",
+      },
+      {
+        type: "paragraph",
+        text: "Before investing in new content or links, run this audit on your current site. Each question surfaces a specific issue that is costing you organic visibility right now:",
+      },
+      {
+        type: "list",
+        items: [
+          "1. Which of your top-10 traffic-driving pages get AI Overviews on their primary keywords? (Check manually in incognito Chrome.) These pages' traffic is structurally at risk regardless of your rankings.",
+          "2. What percentage of your organic traffic comes from branded vs. non-branded keywords? If non-branded is over 70%, your traffic is heavily AI-Overviews-exposed.",
+          "3. Does every article page have Article schema, dateModified, and Author markup? If not, you are invisible to structured entity extraction.",
+          "4. What is your average content freshness score — when was each piece last substantively updated? Content older than 18 months without an update loses citation probability for time-sensitive queries.",
+          "5. Does your content include original data, specific numbers, or case studies? Or is it synthesized from publicly available information? Synthesized content is what AI Overviews replace; original data is what they cite.",
+          "6. What is your Google Business Profile rating and how many reviews have you received in the last 90 days? Below 4.4 stars or fewer than 5 new reviews in 90 days significantly reduces Map Pack visibility.",
+          "7. What does your bottom-of-funnel content look like — do you have dedicated landing pages for your specific services, with pricing signals, case studies, and conversion-optimized structure? This is where the SEO investment needs to shift.",
+        ],
+      },
+      {
+        type: "note",
+        text: "A single 'yes' to question 1 — AI Overviews appear on your top traffic keywords — is the most important signal. That is structural traffic loss that cannot be fixed by better SEO. It requires a content strategy shift toward GEO optimization, bottom-of-funnel content, and branded traffic building.",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "content-formats-that-survive",
+        text: "The content formats winning in the AI Overview era",
+      },
+      {
+        type: "paragraph",
+        text: "Not all content lost in the AI Overview shift. These formats are performing better in 2026 than they did before AI Overviews launched — because they serve needs that AI-generated summaries cannot fulfill:",
+      },
+      {
+        type: "list",
+        items: [
+          "Original case studies and project walkthroughs: 'We built X for a client, here's what happened' is genuinely uncitable by AI because no AI has your specific project data. These also drive the highest conversion rates of any content format.",
+          "Opinion and perspective pieces: AI Overviews synthesize consensus. A clearly argued, distinctive point of view that disagrees with conventional wisdom cannot be replicated by consensus synthesis — and attracts readers specifically because it offers something no AI summary does.",
+          "Tool comparisons with personal hands-on experience: 'I used both tools for 3 months and here's what I found' is extractable and citable — but the frame that you used both is what makes it compelling and trustworthy. AI-generated comparisons are based on publicly available specs; experience-based comparisons are based on reality.",
+          "Long-form guides with original frameworks: Proprietary frameworks, named processes, and unique mental models give you content that people search for by your framework name — converting informational traffic into branded traffic over time.",
+          "Video and multimedia content with text transcripts: YouTube search is not affected by Google AI Overviews. A video version of your best articles reaches an audience that uses a different search surface — and the transcript feeds SEO for both platforms.",
+        ],
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "what-to-do-next-30-days",
+        text: "What to do in the next 30 days to stop the traffic bleed",
+      },
+      {
+        type: "paragraph",
+        text: "Recovery from AI Overview traffic loss is not a one-week project. But there are high-impact actions you can take immediately that show results in 30–60 days:",
+      },
+      {
+        type: "list",
+        items: [
+          "Week 1: Audit. Identify your top 20 traffic-driving pages and check each for AI Overview presence on their primary keyword. Flag which ones are structurally exposed. This tells you where defending existing traffic is impossible — and where a strategy shift is needed.",
+          "Week 1–2: Technical fixes. Add Article schema, FAQ schema, and dateModified markup to every article page. Update the publish date on your top content that has been refreshed. Fix any Core Web Vitals issues above threshold.",
+          "Week 2–3: Content restructuring. Take your top 5 informational articles and restructure them with the AEO format: TL;DR summary, clear question-form H2s, FAQ section at the end, and one specific original data point or case study per article. This increases citation probability without new content.",
+          "Week 3–4: Bottom-of-funnel creation. Write or improve one service landing page with a dedicated case study, specific outcomes (numbers), and a clear conversion path. This content is unaffected by AI Overviews and drives higher-value traffic.",
+          "Ongoing: Google Business Profile. Increase review generation rate to at least 3–5 per month. Update your GBP weekly with posts. Ensure your service descriptions include the specific keywords your local audience uses.",
+        ],
+      },
+      {
+        type: "quote",
+        text: "The businesses winning in search in 2026 are not the ones who figured out how to beat AI Overviews. They are the ones who redirected their content investment toward things AI cannot replicate: original data, specific experience, a distinct voice, and a brand people search for by name.",
+        source: "Auravon AI",
+      },
+      {
+        type: "heading",
+        level: 2,
+        id: "seo-is-not-dead",
+        text: "SEO is not dead — it changed. Here is what it is now.",
+      },
+      {
+        type: "paragraph",
+        text: "Every traffic drop triggers the same headline cycle: 'SEO is dead.' SEO is not dead. Organic search still drives more traffic than any other channel for most businesses. What died is the low-effort version of SEO — publishing articles that synthesize publicly available information, optimizing for keywords without offering any genuine advantage over what an AI can generate. That playbook was always borrowed time. AI just called it in.",
+      },
+      {
+        type: "paragraph",
+        text: "What works now is a more demanding form of content: specific, experience-grounded, factually original, and structured for both human readers and AI extraction. The distribution changed too — SEO now works in concert with brand-building on LinkedIn, YouTube, and newsletters rather than as an isolated channel. The businesses adapting to this are growing organic presence even as AI Overviews expand. The ones waiting for Google to reverse the AI integration are watching traffic decline quarter over quarter.",
+      },
+      {
+        type: "paragraph",
+        text: "We run SEO and digital marketing for businesses that want actual traffic recovery, not a report showing keyword rankings while clicks decline. If your organic traffic has dropped in the last 12 months and you want a clear diagnosis and a concrete plan — we will audit your current state and tell you exactly where the opportunity is. No vague roadmaps. Specific fixes, specific content gaps, specific priorities.",
+      },
+    ],
+  },
+  {
     slug: "ai-agents-for-business-2026",
     title: "AI Agents for Business in 2026: What They Are, What They Cost, and How to Build the Right One",
     excerpt:
